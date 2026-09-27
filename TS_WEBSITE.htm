@@ -1,0 +1,4932 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Team Stallions | Motorsports, Nirma University</title>
+  <meta name="description"
+    content="Team Stallions is the official Motorsports team of Nirma University. Students designing, building and racing a Formula Student and eBAJA car.">
+  <meta name="theme-color" content="#08131f">
+  <meta property="og:title" content="Team Stallions | Motorsports, Nirma University">
+  <meta property="og:description" content="The official Motorsports team of Nirma University.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg" href="logo.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Instrument+Sans:wght@400;500;600&family=Orbitron:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <script>document.documentElement.classList.add('js');</script>
+  <noscript>
+    <style>
+      .loader {
+        display: none !important
+      }
+
+      body:not(.is-started) {
+        overflow: auto !important
+      }
+
+      .hero__title .line__in,
+      .hero__sub {
+        transform: none !important;
+        opacity: 1 !important
+      }
+
+      .js .about__text .w {
+        opacity: 1 !important
+      }
+    </style>
+  </noscript>
+
+  <style>
+    /* =========================================================
+   1. TOKENS
+   Change colours and fonts here and the whole site follows.
+   ========================================================= */
+    :root {
+      --navy: #08131f;
+      /* pit-lane navy: main background */
+      --navy-2: #0e1f31;
+      /* raised surfaces */
+      --navy-3: #16304a;
+      /* asphalt / cards */
+      --concrete: #dfe4e6;
+      /* light sections */
+      --ink: #eef2f4;
+      /* text on dark */
+      --ink-dark: #0a1826;
+      /* text on light */
+      --muted: #8ea1b3;
+      --kerb: #f6d31c;
+      /* main accent: kerb yellow */
+      --red: #e5322d;
+      /* kerb red */
+
+      --display: "Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
+      --body: "Instrument Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+      --pad: clamp(20px, 4vw, 60px);
+      --ease: cubic-bezier(.7, 0, .2, 1);
+      --ease-out: cubic-bezier(.16, 1, .3, 1);
+    }
+
+    /* =========================================================
+   2. BASE
+   ========================================================= */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%
+    }
+
+    html.lenis,
+    html.lenis body {
+      height: auto
+    }
+
+    .lenis.lenis-smooth {
+      scroll-behavior: auto !important
+    }
+
+    .lenis.lenis-stopped {
+      overflow: hidden
+    }
+
+    body {
+      margin: 0;
+      background: var(--navy);
+      color: var(--ink);
+      font-family: var(--body);
+      font-size: clamp(1rem, .95rem + .2vw, 1.125rem);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    body:not(.is-started),
+    body.menu-open {
+      overflow: hidden
+    }
+
+    img,
+    svg {
+      display: block;
+      max-width: 100%
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    button {
+      font: inherit;
+      color: inherit;
+      background: none;
+      border: 0;
+      padding: 0;
+      cursor: pointer
+    }
+
+    h1,
+    h2,
+    h3,
+    p,
+    ul,
+    figure {
+      margin: 0
+    }
+
+    ul {
+      padding: 0;
+      list-style: none
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--kerb);
+      outline-offset: 3px
+    }
+
+    .light :focus-visible {
+      outline-color: var(--navy)
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap
+    }
+
+    .wrap {
+      max-width: 1600px;
+      margin-inline: auto
+    }
+
+    .display {
+      font-family: var(--display);
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: .88;
+      letter-spacing: -.01em
+    }
+
+    .light {
+      background: var(--concrete);
+      color: var(--ink-dark)
+    }
+
+    /* kerb stripe: used as a divider between sections */
+    .kerb {
+      height: clamp(10px, 1.4vw, 18px);
+      background: repeating-linear-gradient(90deg, var(--red) 0 2.2%, #fff 2.2% 4.4%)
+    }
+
+    /* buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .6em;
+      padding: .95em 1.6em;
+      border-radius: 999px;
+      font-weight: 600;
+      line-height: 1;
+      background: var(--kerb);
+      color: var(--navy);
+      border: 2px solid var(--navy);
+      transition: background .3s, color .3s, border-color .3s, transform .4s var(--ease-out);
+    }
+
+    .btn:hover {
+      background: var(--ink)
+    }
+
+    .btn--dark {
+      background: var(--navy);
+      color: var(--ink);
+      border-color: var(--navy)
+    }
+
+    .btn--dark:hover {
+      background: var(--kerb);
+      color: var(--navy)
+    }
+
+    .btn--ghost {
+      background: transparent;
+      color: inherit;
+      border-color: currentColor
+    }
+
+    .btn--ghost:hover {
+      background: var(--ink);
+      color: var(--navy);
+      border-color: var(--ink)
+    }
+
+    .btn--lg {
+      font-size: clamp(1.1rem, 1.6vw, 1.5rem);
+      padding: 1.2em 2.2em
+    }
+
+    .btn[disabled] {
+      opacity: .5;
+      cursor: wait
+    }
+
+    /* =========================================================
+   3. LOADER  (the "Start the engine" gate)
+   ========================================================= */
+    .loader {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: var(--navy);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: var(--pad);
+      transition: transform 1.1s var(--ease);
+    }
+
+    .is-started .loader {
+      transform: translateY(-100%)
+    }
+
+    .loader__top {
+      display: flex;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: .95rem
+    }
+
+    .loader__brand {
+      font-family: var(--display);
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: clamp(3.4rem, 13vw, 13rem);
+      line-height: .84;
+      letter-spacing: -.01em;
+    }
+
+    .loader__brand span {
+      display: block
+    }
+
+    .loader__brand span:last-child {
+      color: var(--kerb)
+    }
+
+    .loader__bottom {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 1rem
+    }
+
+    .loader__count {
+      font-family: var(--display);
+      font-weight: 900;
+      font-size: clamp(3.5rem, 9vw, 8rem);
+      line-height: .8;
+      min-width: 3ch;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .loader__bar {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 8px;
+      background: rgba(255, 255, 255, .08)
+    }
+
+    .loader__bar i {
+      display: block;
+      height: 100%;
+      background: var(--kerb);
+      transform-origin: left;
+      transform: scaleX(0)
+    }
+
+    /* =========================================================
+   4. HEADER + MENU
+   ========================================================= */
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 50;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem calc(var(--pad) + 7.5rem) 1.1rem var(--pad);
+      pointer-events: none;
+      transition: transform .6s var(--ease);
+    }
+
+    .site-header>* {
+      pointer-events: auto
+    }
+
+    .site-header.is-hidden {
+      transform: translateY(-130%)
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      font-family: var(--display);
+      font-weight: 900;
+      font-size: clamp(1.4rem, 2vw, 1.75rem);
+      text-transform: uppercase;
+      letter-spacing: .02em;
+      color: var(--ink);
+      transition: color .3s;
+      text-decoration: none;
+    }
+
+    .site-header.on-light .brand {
+      color: var(--ink-dark)
+    }
+
+    .brand:hover {
+      color: #ffffff;
+    }
+
+    .brand__logo {
+      height: clamp(48px, 4.5vw, 58px);
+      width: auto;
+      object-fit: contain;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
+      filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.65)) drop-shadow(0 0 10px rgba(246, 211, 28, 0.45));
+      transition: transform .3s var(--ease-out), filter .3s var(--ease-out);
+    }
+
+    .brand:hover .brand__logo {
+      transform: scale(1.08);
+      filter: drop-shadow(0 3px 12px rgba(0, 0, 0, 0.75)) drop-shadow(0 0 18px rgba(246, 211, 28, 0.85));
+    }
+
+    .site-header.on-light .brand__logo {
+      filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.3)) drop-shadow(0 0 8px rgba(246, 211, 28, 0.4));
+    }
+
+    .brand svg {
+      width: 34px;
+      height: auto
+    }
+
+    .site-header .btn {
+      padding: .75em 1.3em;
+      font-size: .95rem
+    }
+
+    .menu-btn {
+      position: fixed;
+      top: 1.1rem;
+      right: var(--pad);
+      z-index: 70;
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      padding: .7rem 0;
+      font-weight: 600;
+      color: var(--ink);
+      transition: color .3s;
+    }
+
+    .menu-btn.on-light {
+      color: var(--ink-dark)
+    }
+
+    .menu-open .menu-btn,
+    .menu-open .menu-btn.on-light {
+      color: var(--ink)
+    }
+
+    .menu-btn__icon {
+      position: relative;
+      width: 30px;
+      height: 12px
+    }
+
+    .menu-btn__icon i {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: currentColor;
+      transition: transform .5s var(--ease), top .5s var(--ease)
+    }
+
+    .menu-btn__icon i:first-child {
+      top: 0
+    }
+
+    .menu-btn__icon i:last-child {
+      top: 10px
+    }
+
+    .menu-open .menu-btn__icon i:first-child {
+      top: 5px;
+      transform: rotate(20deg)
+    }
+
+    .menu-open .menu-btn__icon i:last-child {
+      top: 5px;
+      transform: rotate(-20deg)
+    }
+
+    .menu {
+      position: fixed;
+      inset: 0;
+      z-index: 60;
+      background: var(--navy-3);
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 2rem;
+      align-items: center;
+      padding: 6rem var(--pad) 5rem;
+      clip-path: inset(0 0 100% 0);
+      visibility: hidden;
+      transition: clip-path .9s var(--ease), visibility 0s .9s;
+    }
+
+    .menu-open .menu {
+      clip-path: inset(0);
+      visibility: visible;
+      transition: clip-path .9s var(--ease), visibility 0s
+    }
+
+    .menu__list li {
+      overflow: hidden
+    }
+
+    .menu__list a {
+      display: block;
+      font-family: var(--display);
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: clamp(2.6rem, 8.6vh, 7.4rem);
+      line-height: .98;
+      transform: translateY(105%);
+      transition: transform .5s var(--ease), opacity .3s, color .3s;
+    }
+
+    .menu-open .menu__list a {
+      transform: none;
+      transition: transform .9s var(--ease) calc(.25s + var(--i)*.05s), opacity .3s, color .3s
+    }
+
+    .menu__list:hover a:not(:hover),
+    .menu__list:has(a:focus-visible) a:not(:focus-visible) {
+      opacity: .3
+    }
+
+    .menu__list a:hover,
+    .menu__list a:focus-visible {
+      color: var(--kerb)
+    }
+
+    .menu__preview {
+      position: relative;
+      justify-self: end;
+      width: min(100%, 32rem)
+    }
+
+    .menu__frame {
+      position: relative;
+      aspect-ratio: 4/5;
+      overflow: hidden;
+      border-radius: 1.2rem;
+      background: var(--img, none) center/cover no-repeat, var(--tone, var(--navy-2));
+      transition: background-color .5s;
+      display: grid;
+      place-items: center;
+    }
+
+    .menu__frame span {
+      font-family: var(--display);
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: clamp(3rem, 7vw, 6rem);
+      color: rgba(255, 255, 255, .18);
+      text-align: center;
+      line-height: .9
+    }
+
+    .menu__frame.has-img span {
+      display: none
+    }
+
+    .menu__foot {
+      position: absolute;
+      left: var(--pad);
+      right: var(--pad);
+      bottom: 1.6rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: .95rem
+    }
+
+    .menu__foot a:hover {
+      color: var(--ink)
+    }
+
+    .menu__foot div {
+      display: flex;
+      gap: 1.4rem
+    }
+
+    /* =========================================================
+   5. HERO  (scroll-driven lap)
+   ========================================================= */
+    .hero {
+      position: relative;
+      height: 215vh
+    }
+
+    .hero__stage {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      height: 100svh;
+      overflow: hidden;
+      background: radial-gradient(120% 90% at 30% 20%, var(--navy-2) 0%, var(--navy) 60%);
+    }
+
+    .hero__road,
+    .hero__carsvg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%
+    }
+
+    .hero__road {
+      z-index: 1
+    }
+
+    .hero__carsvg {
+      z-index: 3;
+      pointer-events: none
+    }
+
+    .hero__copy {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 6vh var(--pad) 24vh;
+      pointer-events: none
+    }
+
+    .hero__title {
+      font-family: var(--display);
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: min(20vw, 28vh);
+      line-height: .9;
+      letter-spacing: -.015em;
+    }
+
+    .hero__title .line {
+      display: block;
+      overflow: hidden;
+      padding: .02em 0
+    }
+
+    .hero__title .line__in {
+      display: grid;
+      transform: translateY(108%);
+      transition: transform 1.3s var(--ease)
+    }
+
+    .is-started .hero__title .line__in {
+      transform: none;
+      transition-delay: .55s
+    }
+
+    .is-started .hero__title .line:nth-child(2) .line__in {
+      transition-delay: .68s
+    }
+
+    .hero__title .outline,
+    .hero__title .fill {
+      grid-area: 1/1;
+      display: block
+    }
+
+    .hero__title .outline {
+      color: transparent;
+      -webkit-text-stroke: 2px rgba(238, 242, 244, .55);
+      paint-order: stroke fill
+    }
+
+    .hero__title .fill {
+      color: var(--kerb);
+      clip-path: inset(0 100% 0 0)
+    }
+
+    .hero__sub {
+      margin-top: clamp(1rem, 3vh, 2rem);
+      max-width: 26ch;
+      font-size: clamp(1.05rem, 1.5vw, 1.4rem);
+      line-height: 1.35;
+      opacity: 0;
+      transition: opacity 1s 1.3s;
+    }
+
+    .is-started .hero__sub {
+      opacity: .9
+    }
+
+    .hero__next {
+      position: absolute;
+      z-index: 4;
+      right: var(--pad);
+      top: 5.6rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: .45rem;
+      padding: .85rem 1.25rem;
+      border: 1.5px solid rgba(246, 211, 28, .45);
+      border-radius: 14px;
+      font-size: .95rem;
+      line-height: 1.3;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      background: rgba(8, 19, 31, .82);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .45), 0 0 20px rgba(246, 211, 28, .12);
+      transition: border-color .3s, transform .3s;
+    }
+
+    .hero__next:hover {
+      border-color: rgba(246, 211, 28, .8);
+      transform: translateY(-2px);
+    }
+
+    .hero__next-header {
+      display: flex;
+      align-items: flex-start;
+      gap: .65rem;
+    }
+
+    .hero__next-header i {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--kerb);
+      animation: pulse 1.8s infinite;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .hero__next-header-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .hero__next-header small {
+      display: block;
+      color: var(--kerb);
+      font-size: .78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      line-height: 1.1;
+    }
+
+    .hero__next-hint {
+      display: block;
+      font-size: .72rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.7);
+      letter-spacing: .02em;
+    }
+
+    .hero__next-list {
+      list-style-type: disc;
+      padding-left: 1.25rem;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: .55rem;
+    }
+
+    .hero__next-list li {
+      color: #ffffff;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: .02em;
+      line-height: 1.35;
+    }
+
+    .hero__next-list li .event-title {
+      display: block;
+      white-space: nowrap;
+    }
+
+    .hero__next-list li::marker {
+      color: var(--kerb);
+      font-size: 1.2em;
+    }
+
+    /* ---- Floating 3D Golden Hologram Track (Lando Norris style) ---- */
+    .track-popup {
+      position: fixed;
+      z-index: 9999;
+      pointer-events: none;
+      width: 380px;
+      opacity: 0;
+      transform: translate(-50%, calc(-100% - 22px)) scale(0.85);
+      transform-origin: center bottom;
+      transition: opacity .32s cubic-bezier(0.16, 1, 0.3, 1), transform .35s cubic-bezier(0.16, 1, 0.3, 1);
+      perspective: 1100px;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+    }
+
+    .track-popup.is-visible {
+      opacity: 1;
+      transform: translate(-50%, calc(-100% - 22px)) scale(1);
+    }
+
+    /* Floating levitation container */
+    .track-popup__float {
+      position: relative;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      animation: trackLevitate 4.5s ease-in-out infinite;
+      transform-style: preserve-3d;
+      background: transparent;
+    }
+
+    @keyframes trackLevitate {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-9px);
+      }
+    }
+
+    /* 3D Stage for rotating track */
+    .track-popup__stage {
+      position: relative;
+      z-index: 2;
+      width: 340px;
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform-style: preserve-3d;
+      perspective: 900px;
+      transition: transform .15s ease-out;
+    }
+
+    /* Continuous 3D rotation rotator */
+    .track-popup__rotator {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform-style: preserve-3d;
+      animation: trackRotate360 10s linear infinite;
+    }
+
+    @keyframes trackRotate360 {
+      0% {
+        transform: rotateX(30deg) rotateY(0deg) rotateZ(-4deg);
+      }
+
+      50% {
+        transform: rotateX(22deg) rotateY(180deg) rotateZ(-2deg);
+      }
+
+      100% {
+        transform: rotateX(30deg) rotateY(360deg) rotateZ(-4deg);
+      }
+    }
+
+    /* Track image with layered depth & glowing golden colors */
+    .track-popup__img {
+      position: absolute;
+      width: 100%;
+      height: auto;
+      max-height: 155px;
+      object-fit: contain;
+      pointer-events: none;
+      user-select: none;
+      -webkit-user-drag: none;
+      background: transparent;
+      backface-visibility: visible;
+    }
+
+    .track-popup__img--depth {
+      transform: translateZ(-8px) scale(0.98);
+      opacity: 0.45;
+      filter: drop-shadow(0 0 10px rgba(218, 165, 32, 0.7)) brightness(0.85);
+    }
+
+    .track-popup__img--main {
+      transform: translateZ(5px);
+      animation: trackGoldenGlowPulse 2.8s ease-in-out infinite;
+    }
+
+    /* Golden glowing animation */
+    @keyframes trackGoldenGlowPulse {
+
+      0%,
+      100% {
+        filter: drop-shadow(0 0 6px #ffd700) drop-shadow(0 0 15px rgba(255, 215, 0, 0.85)) drop-shadow(0 0 32px rgba(246, 211, 28, 0.65)) drop-shadow(0 0 55px rgba(218, 165, 32, 0.4));
+        opacity: 0.95;
+      }
+
+      50% {
+        filter: drop-shadow(0 0 12px #ffffff) drop-shadow(0 0 26px #ffd700) drop-shadow(0 0 48px rgba(255, 215, 0, 1)) drop-shadow(0 0 80px rgba(246, 211, 28, 0.8));
+        opacity: 1;
+      }
+    }
+
+    /* Holographic Telemetry HUD (no card box, purely floating text & badge) */
+    .track-popup__hud {
+      position: relative;
+      z-index: 3;
+      margin-top: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      pointer-events: none;
+    }
+
+    .track-popup__hud-badge {
+      font-family: var(--mono, monospace);
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      color: #ffd700;
+      text-transform: uppercase;
+      text-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
+      padding: 2px 8px;
+      border: 1px solid rgba(246, 211, 28, 0.35);
+      border-radius: 999px;
+      background: rgba(8, 19, 31, 0.6);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+
+    .track-popup__hud-title {
+      font-family: var(--display);
+      font-size: 1.25rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #fff;
+      line-height: 1.1;
+      text-shadow: 0 0 14px rgba(246, 211, 28, 0.7), 0 2px 8px rgba(0, 0, 0, 0.9);
+    }
+
+    .track-popup__hud-meta {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: rgba(246, 211, 28, 0.92);
+      text-transform: uppercase;
+      text-shadow: 0 0 6px rgba(255, 215, 0, 0.5);
+    }
+
+    .track-popup__hud-meta .dot {
+      color: rgba(255, 255, 255, 0.35);
+      font-size: 0.6rem;
+    }
+
+    .track-venue {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: .8rem;
+      font-weight: 600;
+      color: var(--kerb);
+      margin-top: .25rem;
+      letter-spacing: .04em;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: color .2s var(--ease), text-shadow .2s var(--ease);
+    }
+
+    .track-venue:hover {
+      color: #fff;
+      text-shadow: 0 0 10px var(--kerb);
+    }
+
+    .track-venue__pin {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--kerb);
+      box-shadow: 0 0 8px var(--kerb);
+      animation: pulse 1.8s infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(246, 211, 28, .6)
+      }
+
+      70% {
+        box-shadow: 0 0 0 12px rgba(246, 211, 28, 0)
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(246, 211, 28, 0)
+      }
+    }
+
+    .hud {
+      position: absolute;
+      z-index: 4;
+      left: var(--pad);
+      bottom: var(--pad);
+      pointer-events: none
+    }
+
+    .hud__speed {
+      display: flex;
+      align-items: baseline;
+      gap: .5rem
+    }
+
+    .hud__speed span {
+      font-family: var(--display);
+      font-weight: 900;
+      font-size: clamp(3.4rem, 8vw, 7.5rem);
+      line-height: .8;
+      min-width: 3ch;
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .hud__speed small {
+      color: var(--muted);
+      font-size: .9rem
+    }
+
+    .hud__row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: .7rem
+    }
+
+    .hud__gear {
+      font-size: .9rem;
+      color: var(--muted)
+    }
+
+    .hud__gear b {
+      display: inline-block;
+      min-width: 1.2ch;
+      color: var(--ink);
+      font-size: 1.3rem;
+      font-family: var(--display)
+    }
+
+    .hud__rpm {
+      display: flex;
+      gap: 3px
+    }
+
+    .hud__rpm i {
+      width: clamp(7px, 1vw, 12px);
+      height: clamp(14px, 2vw, 22px);
+      background: rgba(255, 255, 255, .12);
+      transform: skewX(-14deg)
+    }
+
+    .hud__rpm i.on {
+      background: var(--kerb)
+    }
+
+    .hud__rpm i.on.hot {
+      background: var(--red)
+    }
+
+    .hud--lap {
+      left: auto;
+      right: var(--pad);
+      text-align: right;
+      min-width: min(16rem, 38vw)
+    }
+
+    .hud--lap .hud__speed {
+      justify-content: flex-end
+    }
+
+    .hud__bar {
+      height: 6px;
+      background: rgba(255, 255, 255, .14);
+      margin-top: .9rem
+    }
+
+    .hud__bar i {
+      display: block;
+      height: 100%;
+      background: var(--kerb);
+      transform-origin: left;
+      transform: scaleX(0)
+    }
+
+    .hero__hint {
+      position: absolute;
+      z-index: 4;
+      left: 50%;
+      bottom: var(--pad);
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .7rem;
+      font-size: .95rem;
+      color: var(--muted);
+      transition: opacity .5s;
+      pointer-events: none;
+    }
+
+    .hero__hint i {
+      width: 2px;
+      height: 44px;
+      background: linear-gradient(var(--kerb) 50%, transparent 50%) 0 0/2px 22px;
+      animation: hint 1s linear infinite
+    }
+
+    @keyframes hint {
+      to {
+        background-position: 0 22px
+      }
+    }
+
+    .hero.is-moving .hero__hint {
+      opacity: 0
+    }
+
+    .hero__done {
+      position: absolute;
+      z-index: 4;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) scale(.9);
+      opacity: 0;
+      text-align: center;
+      font-family: var(--display);
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: clamp(2.4rem, 7vw, 6rem);
+      line-height: .9;
+      transition: opacity .5s, transform .7s var(--ease-out);
+      pointer-events: none;
+    }
+
+    .hero.is-done .hero__done {
+      opacity: 1;
+      transform: translate(-50%, -50%)
+    }
+
+    @media (max-width:700px) {
+      .hero {
+        height: 430vh
+      }
+
+      .hero__title {
+        font-size: min(23vw, 30vh)
+      }
+
+      .hero__next {
+        top: 4.6rem;
+        padding: .7rem 1rem;
+        gap: .35rem;
+        max-width: calc(100vw - var(--pad) * 2);
+      }
+
+      .hero__next-list {
+        padding-left: 1.15rem;
+        gap: .25rem;
+      }
+
+      .hero__next-list li {
+        font-size: .9rem;
+      }
+
+      .hero__hint {
+        left: var(--pad);
+        transform: none;
+        bottom: calc(var(--pad) + 6rem);
+        align-items: flex-start
+      }
+
+      .brand {
+        font-size: 1.45rem;
+        gap: .65rem;
+      }
+
+      .brand__logo {
+        height: 42px;
+      }
+
+      .site-header .btn {
+        display: none
+      }
+    }
+
+    /* =========================================================
+   6. ABOUT  (words light up as you scroll)
+   ========================================================= */
+    /* --- Photo backdrop --- */
+    .about {
+      position: relative;
+      padding: clamp(7rem, 16vw, 14rem) var(--pad) clamp(6rem, 11vw, 10rem);
+      /* team photo fills the whole section */
+      background:
+        linear-gradient(135deg,
+          rgba(8, 19, 31, .92) 0%,
+          rgba(8, 19, 31, .75) 45%,
+          rgba(22, 48, 74, .65) 70%,
+          rgba(8, 19, 31, .88) 100%),
+        url('team_photo.jpeg') center/cover no-repeat;
+      color: var(--ink);
+      /* override .light on this section */
+      overflow: hidden;
+    }
+
+    /* subtle noise/grain texture overlay for depth */
+    .about::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* left accent bar */
+    .about::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 5px;
+      background: linear-gradient(to bottom, var(--kerb), var(--red));
+      z-index: 1;
+    }
+
+    .about .kerb {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      opacity: .55
+    }
+
+    .about .wrap {
+      position: relative;
+      z-index: 2
+    }
+
+    /* label row */
+    .about__label {
+      display: inline-flex;
+      align-items: center;
+      gap: .75rem;
+      font-family: 'Orbitron', var(--body);
+      font-weight: 700;
+      font-size: .9rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--kerb);
+      margin-bottom: clamp(1.8rem, 4vw, 3rem);
+    }
+
+    .about__label::before {
+      content: '';
+      width: 2.5rem;
+      height: 2px;
+      background: linear-gradient(90deg, var(--kerb), var(--red));
+      flex: none;
+    }
+
+    /* main reveal text */
+    .about__text {
+      font-family: 'Orbitron', var(--body);
+      font-weight: 800;
+      font-size: clamp(1.5rem, 5vw, 3.5rem);
+      line-height: 1.06;
+      letter-spacing: -.025em;
+      max-width: 18em;
+      color: var(--ink);
+    }
+
+    .js .about__text .w {
+      opacity: .12
+    }
+
+    /* footer row */
+    .about__foot {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-top: clamp(3rem, 8vw, 7rem);
+      padding-top: clamp(1.6rem, 3vw, 2.4rem);
+      border-top: 1px solid rgba(238, 242, 244, .15);
+    }
+
+    .about__foot p {
+      max-width: 44ch;
+      color: rgba(238, 242, 244, .7);
+      font-family: 'Orbitron', var(--body);
+      font-weight: 400;
+      font-size: 1.05rem;
+      line-height: 1.65
+    }
+
+    /* stat chips */
+    .about__stats {
+      display: flex;
+      gap: clamp(1.4rem, 3.5vw, 3rem);
+      flex-wrap: wrap;
+      align-items: flex-end;
+    }
+
+    .about__stat span {
+      display: block;
+      font-family: var(--display);
+      font-weight: 900;
+      font-size: clamp(2.4rem, 5vw, 4.2rem);
+      line-height: .88;
+      color: var(--kerb);
+    }
+
+    .about__stat small {
+      display: block;
+      font-family: 'Orbitron', var(--body);
+      font-size: .82rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: .4rem;
+    }
+
+    /* =========================================================
+   7. SEASON STRIP  (vertical scroll becomes horizontal)
+   ========================================================= */
+    .strip {
+      position: relative
+    }
+
+    .strip__sticky {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      height: 100svh;
+      overflow: hidden;
+      display: flex;
+      align-items: center
+    }
+
+    .strip__track {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: clamp(1.6rem, 4vw, 4.5rem);
+      width: max-content;
+      padding: 0 var(--pad);
+      will-change: transform
+    }
+
+    .strip__intro {
+      flex: none;
+      width: min(32rem, 80vw)
+    }
+
+    .strip__intro h2 {
+      font-size: clamp(3.4rem, 8vw, 8rem)
+    }
+
+    .strip__intro p {
+      margin-top: 1.4rem;
+      color: var(--muted);
+      max-width: 32ch
+    }
+
+    .frame {
+      flex: none
+    }
+
+    .frame__box {
+      position: relative;
+      overflow: hidden;
+      background: var(--navy-2);
+      border-radius: .6rem
+    }
+
+    .frame--a .frame__box {
+      width: clamp(15rem, 30vw, 30rem);
+      aspect-ratio: 4/5
+    }
+
+    .frame--b .frame__box {
+      width: clamp(19rem, 44vw, 46rem);
+      aspect-ratio: 16/10
+    }
+
+    .frame--c .frame__box {
+      width: clamp(13rem, 24vw, 24rem);
+      aspect-ratio: 3/4
+    }
+
+    .frame:nth-of-type(even) {
+      transform: translateY(7vh)
+    }
+
+    .frame:nth-of-type(odd) {
+      transform: translateY(-4vh)
+    }
+
+    .frame figcaption {
+      margin-top: .9rem;
+      color: var(--muted);
+      font-size: .95rem
+    }
+
+    .frame__img {
+      position: absolute;
+      inset: 0 -12%;
+      background: var(--img, none) center/cover no-repeat, repeating-linear-gradient(135deg, var(--navy-2) 0 16px, #12283e 16px 32px);
+    }
+
+    .ph-label {
+      position: absolute;
+      left: .9rem;
+      bottom: .9rem;
+      font-size: .8rem;
+      background: var(--navy);
+      padding: .3em .7em;
+      border-radius: 4px;
+      color: var(--muted)
+    }
+
+    .has-img .ph-label {
+      display: none
+    }
+
+    /* ---------- Gallery Button on Frame Cards ---------- */
+    .frame__gallery-btn {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      z-index: 5;
+      display: inline-flex;
+      align-items: center;
+      gap: .45em;
+      padding: .55em 1.1em;
+      font-family: var(--body);
+      font-size: .82rem;
+      font-weight: 600;
+      line-height: 1;
+      color: var(--navy);
+      background: var(--kerb);
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity .35s var(--ease-out), transform .35s var(--ease-out), background .25s;
+    }
+
+    .frame__gallery-btn svg {
+      width: 14px;
+      height: 14px;
+      fill: var(--navy);
+      flex-shrink: 0;
+    }
+
+    .frame__box:hover .frame__gallery-btn,
+    .frame__box:focus-within .frame__gallery-btn {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    .frame__gallery-btn:hover {
+      background: var(--ink);
+    }
+
+    /* ---------- Gallery Overlay ---------- */
+    .gallery-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      display: flex;
+      flex-direction: column;
+      background: rgba(8, 19, 31, .92);
+      backdrop-filter: blur(24px) saturate(140%);
+      -webkit-backdrop-filter: blur(24px) saturate(140%);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .45s var(--ease), visibility .45s;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+    }
+
+    .gallery-overlay.is-open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .gallery-overlay__header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem var(--pad);
+      background: linear-gradient(180deg, rgba(8, 19, 31, .85) 60%, transparent 100%);
+    }
+
+    .gallery-overlay__title {
+      font-family: var(--display);
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: clamp(1.4rem, 3vw, 2.2rem);
+      line-height: 1;
+      color: var(--ink);
+    }
+
+    .gallery-overlay__close {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--navy-2);
+      border: 2px solid var(--navy-3);
+      border-radius: 50%;
+      cursor: pointer;
+      color: var(--ink);
+      transition: background .25s, border-color .25s, transform .3s var(--ease-out);
+    }
+
+    .gallery-overlay__close:hover {
+      background: var(--kerb);
+      border-color: var(--kerb);
+      color: var(--navy);
+      transform: rotate(90deg);
+    }
+
+    .gallery-overlay__close svg {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+    }
+
+    .gallery-overlay__grid {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: .8rem;
+      padding: 0 var(--pad) 3rem;
+    }
+
+    .gallery-overlay__item {
+      position: relative;
+      aspect-ratio: 4/3;
+      border-radius: .5rem;
+      overflow: hidden;
+      cursor: pointer;
+      background: var(--navy-2);
+      border: 2px solid transparent;
+      transition: border-color .25s, transform .35s var(--ease-out);
+    }
+
+    .gallery-overlay__item:hover {
+      border-color: var(--kerb);
+      transform: scale(1.03);
+    }
+
+    .gallery-overlay__item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* placeholder for empty gallery slots */
+    .gallery-overlay__placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      aspect-ratio: 4/3;
+      border-radius: .5rem;
+      border: 2px dashed var(--navy-3);
+      color: var(--muted);
+      font-size: .85rem;
+      background: var(--navy-2);
+    }
+
+    .gallery-overlay__placeholder svg {
+      width: 32px;
+      height: 32px;
+      fill: var(--navy-3);
+    }
+
+    /* ---------- Lightbox (single image zoom) ---------- */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 300;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(8, 19, 31, .96);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .35s var(--ease), visibility .35s;
+      cursor: zoom-out;
+    }
+
+    .lightbox.is-open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .lightbox__img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: .5rem;
+      object-fit: contain;
+      transform: scale(.92);
+      transition: transform .45s var(--ease-out);
+    }
+
+    .lightbox.is-open .lightbox__img {
+      transform: scale(1);
+    }
+
+    .lightbox__nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--navy-2);
+      border: 2px solid var(--navy-3);
+      border-radius: 50%;
+      color: var(--ink);
+      cursor: pointer;
+      transition: background .25s, border-color .25s;
+    }
+
+    .lightbox__nav:hover {
+      background: var(--kerb);
+      border-color: var(--kerb);
+      color: var(--navy);
+    }
+
+    .lightbox__nav svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    .lightbox__nav--prev {
+      left: 1.5rem;
+    }
+
+    .lightbox__nav--next {
+      right: 1.5rem;
+    }
+
+    .lightbox__close {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.5rem;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--navy-2);
+      border: 2px solid var(--navy-3);
+      border-radius: 50%;
+      color: var(--ink);
+      cursor: pointer;
+      transition: background .25s, border-color .25s, transform .3s var(--ease-out);
+    }
+
+    .lightbox__close:hover {
+      background: var(--kerb);
+      border-color: var(--kerb);
+      color: var(--navy);
+      transform: rotate(90deg);
+    }
+
+    .lightbox__close svg {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+    }
+
+    .lightbox__counter {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: .85rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    @media (max-width: 600px) {
+      .gallery-overlay__grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      }
+
+      .frame__gallery-btn {
+        opacity: 1;
+        transform: translateY(0);
+        font-size: .72rem;
+        padding: .45em .9em;
+      }
+    }
+
+    .strip__quote {
+      flex: none;
+      width: min(30rem, 82vw)
+    }
+
+    .strip__quote p {
+      font-family: var(--display);
+      font-weight: 800;
+      font-size: clamp(2.4rem, 5vw, 4.6rem);
+      line-height: .98;
+      color: var(--kerb)
+    }
+
+    .strip__progress {
+      position: absolute;
+      left: var(--pad);
+      right: var(--pad);
+      bottom: var(--pad);
+      height: 4px;
+      background: rgba(255, 255, 255, .12)
+    }
+
+    .strip__progress i {
+      display: block;
+      height: 100%;
+      background: var(--kerb);
+      transform-origin: left;
+      transform: scaleX(0)
+    }
+
+    /* =========================================================
+   8. ON TRACK / OFF TRACK  (panels expand on hover)
+   ========================================================= */
+    .duo {
+      display: flex;
+      min-height: 100vh
+    }
+
+    .panel {
+      position: relative;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 2rem;
+      padding: clamp(6rem, 10vw, 9rem) var(--pad) var(--pad);
+      overflow: hidden;
+      transition: flex .9s var(--ease);
+    }
+
+    .panel--on {
+      background: var(--navy-3)
+    }
+
+    .panel--off {
+      background: var(--kerb);
+      color: var(--navy)
+    }
+
+    .panel h2 {
+      font-size: clamp(4.2rem, 11.5vw, 13rem);
+      line-height: .82
+    }
+
+    .panel p {
+      max-width: 30ch;
+      font-size: 1.1rem;
+      margin-bottom: 1.6rem
+    }
+
+    .panel__img {
+      position: absolute;
+      inset: 0;
+      background: var(--img, none) center/cover no-repeat;
+      opacity: 0;
+      transition: opacity .6s;
+      mix-blend-mode: multiply
+    }
+
+    .panel>*:not(.panel__img) {
+      position: relative;
+      z-index: 1
+    }
+
+    @media (hover:hover) and (min-width:821px) {
+      .duo:hover .panel:not(:hover) {
+        flex: .85
+      }
+
+      .duo .panel:hover {
+        flex: 1.3
+      }
+
+      .panel:hover .panel__img {
+        opacity: .45
+      }
+    }
+
+    @media (max-width:820px) {
+      .duo {
+        flex-direction: column
+      }
+
+      .panel {
+        min-height: 78vh
+      }
+    }
+
+    /* =========================================================
+   9. CREW  (stacking cards)
+   ========================================================= */
+    .crew {
+      padding: clamp(5rem, 10vw, 9rem) var(--pad) clamp(3rem, 6vw, 6rem)
+    }
+
+    .crew__head {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 2rem;
+      margin-bottom: clamp(2.5rem, 6vw, 5rem)
+    }
+
+    .crew__head h2 {
+      font-size: clamp(3.6rem, 10vw, 10rem)
+    }
+
+    .crew__head p {
+      max-width: 36ch;
+      color: var(--muted)
+    }
+
+    .stack {
+      --step: clamp(4.6rem, 7.8vw, 7rem)
+    }
+
+    .card {
+      position: sticky;
+      top: calc(9vh + var(--n)*var(--step));
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: clamp(2rem, 5vw, 4rem);
+      min-height: min(70vh, 31rem);
+      margin-bottom: 12vh;
+      padding: clamp(1.1rem, 2.2vw, 1.9rem) clamp(1.4rem, 3.6vw, 3.4rem) clamp(1.4rem, 3.6vw, 3.4rem);
+      border-radius: 1.6rem;
+      transform-origin: 50% 0;
+      will-change: transform;
+    }
+
+    .card:last-child {
+      margin-bottom: 0
+    }
+
+    .card--1 {
+      background: var(--concrete);
+      color: var(--ink-dark)
+    }
+
+    .card--2 {
+      background: var(--kerb);
+      color: var(--navy)
+    }
+
+    .card--3 {
+      background: var(--navy-3);
+      color: var(--ink)
+    }
+
+    .card--4 {
+      background: var(--red);
+      color: var(--ink)
+    }
+
+    .card h3 {
+      font-family: var(--display);
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: clamp(2.6rem, 5.8vw, 5.6rem);
+      line-height: .9
+    }
+
+    .card__body {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: clamp(1.5rem, 4vw, 4rem);
+      align-items: end
+    }
+
+    .card__body p {
+      font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+      line-height: 1.4;
+      max-width: 34ch
+    }
+
+    .card__list {
+      border-top: 1.5px solid currentColor
+    }
+
+    .card__list li {
+      padding: .75rem 0;
+      border-bottom: 1.5px solid currentColor;
+      font-weight: 500
+    }
+
+    /* Sub-department group (e.g. Vehicle Dynamics sub-parts) */
+    .card__list-group {
+      padding: .75rem 0;
+      border-bottom: 1.5px solid currentColor;
+      font-weight: 600;
+      font-size: .85em;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      opacity: .65;
+    }
+
+    .card__sublist {
+      margin-top: .35rem;
+      padding-left: 0;
+    }
+
+    .card__sublist li {
+      padding: .5rem 0 .5rem .9rem;
+      border-bottom: 1px solid rgba(128, 128, 128, .25);
+      font-weight: 500;
+      font-size: 1.05em;
+      text-transform: none;
+      letter-spacing: 0;
+      opacity: 1;
+    }
+
+    .card__sublist li:last-child {
+      border-bottom: none;
+    }
+
+    /* Multi-column list container (e.g. Statics department 5-5 symmetry) */
+    .card__list-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(1.2rem, 2.5vw, 2.8rem);
+    }
+
+    @media (min-width: 821px) {
+      .card--4 .card__body {
+        grid-template-columns: minmax(220px, 0.7fr) minmax(auto, 1.3fr);
+      }
+    }
+
+    @media (max-width: 540px) {
+      .card__list-cols {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .card__list-cols .card__list:last-child {
+        border-top: none;
+      }
+    }
+
+    @media (max-width:820px) {
+      .card {
+        min-height: auto
+      }
+
+      .card__body {
+        grid-template-columns: 1fr;
+        align-items: start
+      }
+    }
+
+    /* ---------- Clickable Department Items ---------- */
+    .card__list li[data-dept] {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: padding-left .3s var(--ease-out), color .2s;
+    }
+
+    .card__list li[data-dept]::after {
+      content: '→';
+      font-size: 1.1em;
+      opacity: 0;
+      transform: translateX(-6px);
+      transition: opacity .3s, transform .3s var(--ease-out);
+    }
+
+    .card__list li[data-dept]:hover {
+      padding-left: .5rem;
+    }
+
+    .card__list li[data-dept]:hover::after {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .card--1 .card__list li[data-dept]:hover {
+      color: var(--red);
+    }
+
+    .card--2 .card__list li[data-dept]:hover {
+      color: var(--navy-3);
+    }
+
+    .card--3 .card__list li[data-dept]:hover {
+      color: var(--kerb);
+    }
+
+    .card--4 .card__list li[data-dept]:hover {
+      color: var(--navy);
+    }
+
+    /* ---------- Team Members Gallery Overlay ---------- */
+    .team-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      display: flex;
+      flex-direction: column;
+      background: rgba(8, 19, 31, .94);
+      backdrop-filter: blur(28px) saturate(140%);
+      -webkit-backdrop-filter: blur(28px) saturate(140%);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .45s var(--ease), visibility .45s;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+    }
+
+    .team-overlay.is-open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .team-overlay__header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem var(--pad);
+      background: linear-gradient(180deg, rgba(8, 19, 31, .9) 60%, transparent 100%);
+    }
+
+    .team-overlay__title {
+      font-family: var(--display);
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+      line-height: 1;
+      color: var(--ink);
+    }
+
+    .team-overlay__title span {
+      color: var(--kerb);
+    }
+
+    .team-overlay__close {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--navy-2);
+      border: 2px solid var(--navy-3);
+      border-radius: 50%;
+      cursor: pointer;
+      color: var(--ink);
+      transition: background .25s, border-color .25s, transform .3s var(--ease-out);
+    }
+
+    .team-overlay__close:hover {
+      background: var(--kerb);
+      border-color: var(--kerb);
+      color: var(--navy);
+      transform: rotate(90deg);
+    }
+
+    .team-overlay__close svg {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+    }
+
+    .team-overlay__grid {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 302px));
+      justify-content: center;
+      gap: 1.5rem;
+      padding: .5rem var(--pad) 3.5rem;
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* ---------- Member Card ---------- */
+    .member-card {
+      position: relative;
+      border-radius: .9rem;
+      overflow: hidden;
+      background: var(--navy-2);
+      border: 2px solid var(--navy-3);
+      transition: border-color .3s, transform .4s var(--ease-out), box-shadow .4s;
+      width: 300px;
+      height: 550px;
+    }
+
+    .member-card:hover {
+      border-color: var(--kerb);
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, .4), 0 0 0 1px rgba(246, 211, 28, .15);
+    }
+
+    .member-card__photo {
+      width: 300px;
+      height: 425px;
+      background: var(--navy-3);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .member-card__photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      display: block;
+      transition: transform .5s var(--ease-out);
+    }
+
+    .member-card:hover .member-card__photo img {
+      transform: scale(1.06);
+    }
+
+    /* placeholder when no photo is set */
+    .member-card__photo-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(145deg, var(--navy-2) 0%, var(--navy-3) 100%);
+    }
+
+    .member-card__photo-placeholder svg {
+      width: 48px;
+      height: 48px;
+      fill: var(--navy-3);
+      opacity: .6;
+    }
+
+    .member-card__info {
+      padding: 1.05rem 1.15rem 1.25rem;
+      background: linear-gradient(180deg, var(--navy-2) 0%, rgba(14, 31, 49, .95) 100%);
+    }
+
+    .member-card__name {
+      font-family: var(--display);
+      font-weight: 800;
+      font-size: clamp(1.35rem, 1.9vw, 1.65rem);
+      text-transform: uppercase;
+      line-height: 1.15;
+      color: var(--ink);
+      letter-spacing: .02em;
+    }
+
+    .member-card__position {
+      margin-top: .35rem;
+      font-family: var(--body);
+      font-size: .82rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--kerb);
+      line-height: 1.35;
+    }
+
+    /* empty member placeholder card */
+    .member-card--empty {
+      border-style: dashed;
+      border-color: var(--navy-3);
+    }
+
+    .member-card--empty .member-card__info {
+      background: transparent;
+    }
+
+    .member-card--empty .member-card__name {
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .member-card--empty .member-card__position {
+      color: var(--navy-3);
+    }
+
+    @media (max-width: 600px) {
+      .team-overlay__grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        justify-content: center;
+        gap: .85rem;
+        padding: .5rem var(--pad) 2.5rem;
+      }
+
+      .member-card {
+        max-width: 100%;
+      }
+
+      .member-card__info {
+        padding: .75rem .85rem .95rem;
+      }
+
+      .member-card__name {
+        font-size: 1.02rem;
+      }
+
+      .member-card__position {
+        font-size: .75rem;
+      }
+    }
+
+    /* =========================================================
+   10. CARS  (hover list with floating preview)
+
+   ========================================================= */
+    .cars {
+      background: var(--navy-2);
+      padding: clamp(5rem, 10vw, 9rem) var(--pad)
+    }
+
+    .cars__head h2 {
+      font-size: clamp(3.6rem, 10vw, 10rem)
+    }
+
+    .cars__head p {
+      margin-top: 1.4rem;
+      color: var(--muted);
+      max-width: 44ch
+    }
+
+    .cars__list {
+      margin-top: clamp(2.5rem, 5vw, 4rem);
+      border-top: 1px solid rgba(255, 255, 255, .2)
+    }
+
+    .car-row {
+      display: grid;
+      grid-template-columns: clamp(5rem, 12vw, 11rem) 1fr auto;
+      align-items: baseline;
+      gap: 1rem;
+      padding: clamp(1.1rem, 2.4vw, 2rem) 0;
+      border-bottom: 1px solid rgba(255, 255, 255, .2);
+      transition: padding .5s var(--ease), color .3s;
+      cursor: pointer;
+    }
+
+    .car-row__year {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: clamp(1.3rem, 2.2vw, 2rem);
+      color: var(--muted)
+    }
+
+    .car-row__name {
+      font-family: var(--display);
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: clamp(2.4rem, 6.2vw, 6rem);
+      line-height: .9
+    }
+
+    .car-row__note {
+      color: var(--muted);
+      font-size: .95rem;
+      text-align: right
+    }
+
+    @media (hover:hover) {
+      .car-row:hover {
+        padding-left: 1.6rem;
+        color: var(--kerb)
+      }
+    }
+
+    .cars__preview {
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 40;
+      width: clamp(200px, 22vw, 340px);
+      aspect-ratio: 4/5;
+      pointer-events: none;
+      border-radius: .8rem;
+      overflow: hidden;
+      opacity: 0;
+      transform: translate3d(-999px, -999px, 0) scale(.85);
+      transition: opacity .3s;
+      background: var(--img, none) center/cover no-repeat, repeating-linear-gradient(135deg, var(--navy-3) 0 16px, #1c3a5a 16px 32px);
+    }
+
+    .cars__preview.is-on {
+      opacity: 1
+    }
+
+    .cars__preview span {
+      position: absolute;
+      left: .8rem;
+      bottom: .8rem;
+      font-size: .8rem;
+      background: var(--navy);
+      padding: .3em .7em;
+      border-radius: 4px;
+      color: var(--muted)
+    }
+
+    .cars__preview.has-img span {
+      display: none
+    }
+
+    /* ---------- Car Season Overlay ---------- */
+    .car-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      display: flex;
+      flex-direction: column;
+      background: rgba(8, 19, 31, .96);
+      backdrop-filter: blur(28px) saturate(140%);
+      -webkit-backdrop-filter: blur(28px) saturate(140%);
+      opacity: 0;
+      visibility: hidden;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      transition: opacity .4s var(--ease), visibility .4s;
+    }
+
+    .car-overlay.is-open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .car-overlay__header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem var(--pad);
+      background: linear-gradient(180deg, rgba(8, 19, 31, .92) 60%, transparent 100%);
+    }
+
+    .car-overlay__title {
+      font-family: var(--display);
+      font-weight: 900;
+      font-size: clamp(1.6rem, 4vw, 2.8rem);
+      text-transform: uppercase;
+      line-height: 1;
+      color: var(--ink);
+    }
+
+    .car-overlay__title span {
+      color: var(--kerb);
+    }
+
+    .car-overlay__close {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 2px solid rgba(238, 242, 244, .25);
+      background: rgba(238, 242, 244, .06);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      color: var(--ink);
+      transition: background .25s, border-color .25s, transform .3s var(--ease-out);
+    }
+
+    .car-overlay__close:hover {
+      background: var(--kerb);
+      border-color: var(--kerb);
+      color: var(--navy);
+      transform: rotate(90deg);
+    }
+
+    .car-overlay__close svg {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+    }
+
+    /* Hero section with car image + season info */
+    .car-overlay__hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(1.5rem, 4vw, 3rem);
+      padding: 0 var(--pad) clamp(2rem, 4vw, 3rem);
+      align-items: center;
+    }
+
+    .car-overlay__hero-img {
+      width: 100%;
+      aspect-ratio: 16/10;
+      border-radius: .8rem;
+      overflow: hidden;
+      background: var(--navy-3);
+      position: relative;
+    }
+
+    .car-overlay__hero-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .car-overlay__hero-img-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(145deg, var(--navy-2) 0%, var(--navy-3) 100%);
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .car-overlay__info {
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+    }
+
+    .car-overlay__car-name {
+      font-family: var(--display);
+      font-weight: 900;
+      font-size: clamp(3rem, 8vw, 6rem);
+      text-transform: uppercase;
+      line-height: .85;
+      color: var(--ink);
+    }
+
+    .car-overlay__car-name span {
+      display: block;
+      font-size: .35em;
+      color: var(--kerb);
+      letter-spacing: .1em;
+      margin-bottom: .3rem;
+    }
+
+    .car-overlay__result {
+      font-family: var(--body);
+      font-size: clamp(1rem, 1.4vw, 1.2rem);
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 40ch;
+    }
+
+    .car-overlay__stats {
+      display: flex;
+      gap: clamp(1.5rem, 3vw, 2.5rem);
+      flex-wrap: wrap;
+      margin-top: .5rem;
+    }
+
+    .car-overlay__stat {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .car-overlay__stat strong {
+      font-family: var(--display);
+      font-weight: 900;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      color: var(--kerb);
+      line-height: 1;
+    }
+
+    .car-overlay__stat small {
+      font-size: .75rem;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--muted);
+      margin-top: .25rem;
+    }
+
+    /* Gallery section inside the overlay */
+    .car-overlay__gallery-title {
+      padding: 0 var(--pad);
+      font-family: var(--display);
+      font-weight: 800;
+      font-size: clamp(1.2rem, 2vw, 1.6rem);
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      color: var(--ink);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+    }
+
+    .car-overlay__gallery-title::before {
+      content: '';
+      width: 2rem;
+      height: 2px;
+      background: var(--kerb);
+    }
+
+    .car-overlay__gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      padding: 0 var(--pad) 3.5rem;
+    }
+
+    .car-overlay__gallery-item {
+      border-radius: .6rem;
+      overflow: hidden;
+      aspect-ratio: 16/10;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: border-color .25s, transform .35s var(--ease-out);
+    }
+
+    .car-overlay__gallery-item:hover {
+      border-color: var(--kerb);
+      transform: scale(1.03);
+    }
+
+    .car-overlay__gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .5s var(--ease-out);
+    }
+
+    .car-overlay__gallery-item:hover img {
+      transform: scale(1.06);
+    }
+
+    .car-overlay__gallery-placeholder {
+      border-radius: .6rem;
+      aspect-ratio: 16/10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      border: 2px dashed var(--navy-3);
+      color: var(--muted);
+      font-size: .85rem;
+      background: var(--navy-2);
+    }
+
+    .car-overlay__gallery-placeholder svg {
+      width: 32px;
+      height: 32px;
+      fill: currentColor;
+      opacity: .4;
+    }
+
+    @media (max-width: 820px) {
+      .car-overlay__hero {
+        grid-template-columns: 1fr;
+      }
+
+      .car-overlay__gallery {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      }
+    }
+
+    @media (hover:none),
+    (max-width:700px) {
+      .cars__preview {
+        display: none
+      }
+
+      .car-row__note {
+        display: none
+      }
+
+      .car-row {
+        grid-template-columns: 4.5rem 1fr
+      }
+    }
+
+    /* =========================================================
+   11. PARTNERS  (marquee that reacts to scroll speed)
+   ========================================================= */
+    .partners {
+      padding: clamp(5rem, 10vw, 9rem) 0;
+      overflow: hidden
+    }
+
+    .partners__head {
+      padding: 0 var(--pad);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: clamp(2.5rem, 5vw, 4rem)
+    }
+
+    .partners__head h2 {
+      font-size: clamp(3.6rem, 10vw, 10rem)
+    }
+
+    .partners__head p {
+      max-width: 34ch;
+      color: var(--muted)
+    }
+
+    .marquee {
+      overflow: hidden;
+      white-space: nowrap;
+      border-block: 1px solid rgba(255, 255, 255, .16);
+      padding: clamp(1rem, 2vw, 1.6rem) 0
+    }
+
+    .marquee+.marquee {
+      border-top: 0
+    }
+
+    .marquee__inner {
+      display: flex;
+      width: max-content;
+      will-change: transform
+    }
+
+    .marquee__item {
+      display: flex;
+      align-items: center;
+      font-family: var(--display);
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: clamp(2.6rem, 6.4vw, 6rem);
+      line-height: 1;
+      padding-right: clamp(2.5rem, 5vw, 5rem);
+      color: transparent;
+      -webkit-text-stroke: 1.5px rgba(238, 242, 244, .7);
+    }
+
+    .marquee--fill .marquee__item {
+      color: var(--ink);
+      -webkit-text-stroke: 0
+    }
+
+    .marquee__item::after {
+      content: "";
+      width: .5em;
+      height: .7em;
+      margin-left: clamp(2.5rem, 5vw, 5rem);
+      background: var(--kerb);
+      transform: skewX(-16deg)
+    }
+
+    /* =========================================================
+   12. FAQ
+   ========================================================= */
+    .faq {
+      position: relative;
+      padding: clamp(6rem, 12vw, 11rem) var(--pad)
+    }
+
+    .faq .kerb {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0
+    }
+
+    .faq__grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: clamp(2rem, 6vw, 6rem)
+    }
+
+    .faq h2 {
+      font-size: clamp(3.6rem, 9vw, 9rem)
+    }
+
+    .faq__item {
+      border-top: 1.5px solid var(--ink-dark)
+    }
+
+    .faq__item:last-child {
+      border-bottom: 1.5px solid var(--ink-dark)
+    }
+
+    .faq__q {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      text-align: left;
+      padding: 1.5rem 0;
+      font-family: var(--display);
+      font-weight: 800;
+      font-size: clamp(1.7rem, 3vw, 2.6rem);
+      line-height: 1;
+    }
+
+    .faq__plus {
+      position: relative;
+      flex: none;
+      width: 28px;
+      height: 28px
+    }
+
+    .faq__plus::before,
+    .faq__plus::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      height: 3px;
+      margin-top: -1.5px;
+      background: currentColor;
+      transition: transform .5s var(--ease)
+    }
+
+    .faq__plus::after {
+      transform: rotate(90deg)
+    }
+
+    .faq__item.is-open .faq__plus::after {
+      transform: rotate(0)
+    }
+
+    .faq__a {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows .55s var(--ease)
+    }
+
+    .faq__item.is-open .faq__a {
+      grid-template-rows: 1fr
+    }
+
+    .faq__a>div {
+      overflow: hidden
+    }
+
+    .faq__a p {
+      padding: 0 3rem 1.6rem 0;
+      max-width: 56ch
+    }
+
+    @media (max-width:820px) {
+      .faq__grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    /* =========================================================
+   13. JOIN / FOOTER
+   ========================================================= */
+    .join {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(6rem, 12vw, 11rem) var(--pad) 0
+    }
+
+    .join .kerb {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0
+    }
+
+    .join__title {
+      font-size: clamp(4rem, 12.5vw, 13rem)
+    }
+
+    .join__row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: clamp(2rem, 5vw, 4rem)
+    }
+
+    .join__row p {
+      max-width: 40ch;
+      color: var(--muted)
+    }
+
+    .join__cols {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+      gap: 2rem;
+      margin-top: clamp(4rem, 8vw, 7rem);
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, .2)
+    }
+
+    .join__cols h3 {
+      font-size: .95rem;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: .8rem
+    }
+
+    .join__cols li {
+      line-height: 1.9
+    }
+
+    .join__cols a:hover {
+      color: var(--kerb)
+    }
+
+    .join__mark {
+      font-family: var(--display);
+      font-weight: 900;
+      text-transform: uppercase;
+      text-align: center;
+      white-space: nowrap;
+      font-size: 24vw;
+      line-height: .74;
+      margin-top: 1.4rem;
+      color: var(--navy-3);
+      user-select: none;
+      pointer-events: none;
+      transform: translateY(50%);
+    }
+
+    .join__legal {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.4rem 0 0;
+      margin-top: clamp(3rem, 6vw, 5rem);
+      font-size: .9rem;
+      color: var(--muted)
+    }
+
+    /* =========================================================
+   14. CURSOR RING  (desktop only)
+   ========================================================= */
+    .ring {
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 200;
+      width: 34px;
+      height: 34px;
+      margin: -17px 0 0 -17px;
+      border: 1.5px solid #fff;
+      border-radius: 50%;
+      pointer-events: none;
+      mix-blend-mode: difference;
+      opacity: 0;
+      transition: width .35s var(--ease-out), height .35s var(--ease-out), margin .35s var(--ease-out), background .3s, opacity .3s;
+    }
+
+    .ring.is-visible {
+      opacity: 1
+    }
+
+    .ring.is-active {
+      width: 56px;
+      height: 56px;
+      margin: -28px 0 0 -28px;
+      background: rgba(255, 255, 255, .22)
+    }
+
+    @media (hover:none),
+    (pointer:coarse) {
+      .ring {
+        display: none
+      }
+    }
+
+    /* =========================================================
+   15. REDUCED MOTION
+   ========================================================= */
+    @media (prefers-reduced-motion:reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        transition-delay: 0s !important
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============ LOADER ============ -->
+  <div class="loader" id="loader" role="dialog" aria-label="Loading Team Stallions">
+    <div class="loader__top"><span>Nirma University</span><span>Motorsports</span></div>
+    <p class="loader__brand"><span>Team</span><span>Stallions</span></p>
+    <div class="loader__bottom">
+      <span class="loader__count" id="loaderCount" aria-live="off">000</span>
+      <button class="btn btn--ghost" id="loaderGo" disabled>Warming up</button>
+    </div>
+    <div class="loader__bar"><i id="loaderBar"></i></div>
+  </div>
+
+  <div class="ring" id="ring" aria-hidden="true"></div>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" id="siteHeader">
+    <a href="#top" class="brand" aria-label="Team Stallions, back to top">
+      <img src="logo.svg" alt="Team Stallions Logo" class="brand__logo">
+      <span>Team Stallions</span>
+    </a>
+    <a class="btn magnetic" href="#join">Join the team</a>
+  </header>
+
+  <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu">
+    <span class="menu-btn__label">Menu</span>
+    <span class="menu-btn__icon" aria-hidden="true"><i></i><i></i></span>
+  </button>
+
+  <!-- ============ MENU ============ -->
+  <nav class="menu" id="menu" aria-label="Main menu" inert>
+    <ul class="menu__list">
+      <li style="--i:0"><a href="#top" data-tone="#0e1f31">Home</a></li>
+      <li style="--i:1"><a href="#about" data-tone="#dfe4e6">Our story</a></li>
+      <li style="--i:2"><a href="#frames" data-tone="#f6d31c">The season</a></li>
+      <li style="--i:3"><a href="#tracks" data-tone="#e5322d">On and off track</a></li>
+      <li style="--i:4"><a href="#crew" data-tone="#16304a">The crew</a></li>
+      <li style="--i:5"><a href="#cars" data-tone="#0e1f31">The cars</a></li>
+      <li style="--i:6"><a href="#partners" data-tone="#16304a">Partners</a></li>
+      <li style="--i:7"><a href="#faq" data-tone="#dfe4e6">FAQ</a></li>
+      <li style="--i:8"><a href="#join" data-tone="#f6d31c">Join us</a></li>
+    </ul>
+    <div class="menu__preview" aria-hidden="true">
+      <!-- To show a photo per menu item, add data-img="images/crew.jpg" to the link above -->
+      <div class="menu__frame" id="menuFrame"><span id="menuFrameLabel">Stallions</span></div>
+    </div>
+    <div class="menu__foot">
+      <a data-link="email" href="mailto:itnuteamstallions@gmail.com">itnuteamstallions@gmail.com</a>
+      <div>
+        <a data-link="instagram" href="#">Instagram</a>
+        <a data-link="linkedin" href="https://www.linkedin.com/company/teamstallions">LinkedIn</a>
+        <a data-link="youtube" href="#">YouTube</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ============ HERO: drive the lap by scrolling ============ -->
+    <section class="hero" id="top" aria-label="Introduction">
+      <div class="hero__stage">
+
+        <svg class="hero__road" id="roadSvg" aria-hidden="true">
+          <path id="roadKerbA" fill="none" stroke="#fff" />
+          <path id="roadKerbB" fill="none" stroke="#e5322d" />
+          <path id="roadAsphalt" fill="none" stroke="#16304a" />
+          <path id="roadCentre" fill="none" stroke="rgba(255,255,255,.35)" />
+          <path id="roadTrail" fill="none" stroke="#f6d31c" stroke-linecap="round" />
+        </svg>
+
+        <div class="hero__copy">
+          <h1 class="hero__title" aria-label="Team Stallions">
+            <span class="line" aria-hidden="true"><span class="line__in"><span class="outline">Team</span><span
+                  class="fill">Team</span></span></span>
+            <span class="line" aria-hidden="true"><span class="line__in"><span class="outline">Stallions</span><span
+                  class="fill">Stallions</span></span></span>
+          </h1>
+          <p class="hero__sub">The official Motorsports team of Nirma University.</p>
+        </div>
+
+        <!-- EDIT: update this when your next event is confirmed -->
+        <div class="hero__next">
+          <div class="hero__next-header">
+            <i></i>
+            <div class="hero__next-header-info">
+              <small>Next Events</small>
+              <span class="hero__next-hint">Hover to see the track</span>
+            </div>
+          </div>
+          <ul class="hero__next-list">
+            <li id="eBajaEventItem">
+              <span class="event-title">eBAJA 2027</span>
+              <span class="track-venue" id="natraxVenueText"><i class="track-venue__pin"></i> NATRAX, Pithampur</span>
+            </li>
+            <li id="fbEventItem" data-track="kari_track_gold.png" data-venue="Kari Motor Speedway">
+              <span class="event-title">Formula Bharat 2027</span>
+              <span class="track-venue" id="kariVenueText"><i class="track-venue__pin"></i> Kari Motor Speedway</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Floating 3D Golden Hologram Track (Lando Norris style) -->
+        <div class="track-popup" id="trackPopup" aria-hidden="true">
+          <div class="track-popup__float">
+            <!-- 3D Rotating Stage -->
+            <div class="track-popup__stage" id="trackPopupStage">
+              <div class="track-popup__rotator" id="trackPopupRotator">
+                <!-- 3D Layered Track Slices for Depth -->
+                <img class="track-popup__img track-popup__img--depth" src="kari_track_gold.png" alt=""
+                  aria-hidden="true">
+                <img class="track-popup__img track-popup__img--main" src="kari_track_gold.png"
+                  alt="Kari Motor Speedway circuit hologram">
+              </div>
+            </div>
+            <!-- Holographic Telemetry HUD Label -->
+            <div class="track-popup__hud">
+              <strong class="track-popup__hud-title">Kari Motor Speedway</strong>
+              <div class="track-popup__hud-meta">
+                <span>2.10 KM</span>
+                <span class="dot">&bull;</span>
+                <span>15 TURNS</span>
+                <span class="dot">&bull;</span>
+                <span>COIMBATORE</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating 3D Golden Hologram Track - NATRAX Pithampur (eBAJA) -->
+        <div class="track-popup" id="natraxPopup" aria-hidden="true">
+          <div class="track-popup__float">
+            <!-- 3D Rotating Stage -->
+            <div class="track-popup__stage" id="natraxPopupStage">
+              <div class="track-popup__rotator">
+                <!-- 3D Layered Track Slices for Depth -->
+                <img class="track-popup__img track-popup__img--depth" src="natrax_track_gold.png" alt=""
+                  aria-hidden="true">
+                <img class="track-popup__img track-popup__img--main" src="natrax_track_gold.png"
+                  alt="NATRAX Pithampur circuit hologram">
+              </div>
+            </div>
+            <!-- Holographic Telemetry HUD Label -->
+            <div class="track-popup__hud">
+              <strong class="track-popup__hud-title">NATRAX Pithampur</strong>
+              <div class="track-popup__hud-meta">
+                <span>3.70 KM</span>
+                <span class="dot">&bull;</span>
+                <span>14 TURNS</span>
+                <span class="dot">&bull;</span>
+                <span>PITHAMPUR</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <svg class="hero__carsvg" id="carSvg" aria-hidden="true">
+          <g id="car">
+            <ellipse cx="-2" cy="5" rx="58" ry="24" fill="#000" opacity=".3" />
+            <!-- rear wing -->
+            <rect x="-60" y="-22" width="11" height="44" rx="2" fill="#0a1a2b" />
+            <rect x="-60" y="-22" width="11" height="5" fill="#f6d31c" />
+            <rect x="-60" y="17" width="11" height="5" fill="#f6d31c" />
+            <!-- suspension -->
+            <path d="M27 -15 L20 -6 M27 15 L20 6 M-28 -16 L-24 -8 M-28 16 L-24 8" stroke="#0a1a2b" stroke-width="2.2"
+              fill="none" />
+            <!-- wheels -->
+            <rect x="-42" y="-29" width="22" height="13" rx="3" fill="#050b12" />
+            <rect x="-42" y="16" width="22" height="13" rx="3" fill="#050b12" />
+            <rect x="17" y="-26" width="17" height="11" rx="3" fill="#050b12" />
+            <rect x="17" y="15" width="17" height="11" rx="3" fill="#050b12" />
+            <!-- front wing -->
+            <rect x="45" y="-24" width="12" height="48" rx="2" fill="#eef2f4" />
+            <rect x="45" y="-24" width="12" height="5" fill="#e5322d" />
+            <rect x="45" y="19" width="12" height="5" fill="#e5322d" />
+            <!-- body -->
+            <path
+              d="M47 0 L37 -3.5 L17 -6 L3 -11.5 L-16 -12.5 L-41 -9.5 L-47 -5 L-47 5 L-41 9.5 L-16 12.5 L3 11.5 L17 6 L37 3.5 Z"
+              fill="#eef2f4" />
+            <rect x="-46" y="-1.6" width="92" height="3.2" fill="#e5322d" />
+            <!-- cockpit, helmet, halo -->
+            <ellipse cx="-2" cy="0" rx="9.5" ry="5.2" fill="#0a1a2b" />
+            <circle cx="-2" cy="0" r="3.7" fill="#f6d31c" />
+            <path d="M6 -6 Q11 0 6 6" stroke="#0a1a2b" fill="none" stroke-width="1.7" />
+          </g>
+        </svg>
+
+        <!-- speed, gear and RPM react to how fast you scroll -->
+        <div class="hud" aria-hidden="true">
+          <div class="hud__speed"><span id="hudSpeed">000</span><small>km/h</small></div>
+          <div class="hud__row">
+            <span class="hud__gear">Gear <b id="hudGear">N</b></span>
+            <div class="hud__rpm" id="hudRpm"></div>
+          </div>
+        </div>
+        <div class="hud hud--lap" aria-hidden="true">
+          <div class="hud__speed"><small>Lap</small><span id="hudLap">0</span><small>%</small></div>
+          <div class="hud__bar"><i id="hudBar"></i></div>
+        </div>
+
+        <div class="hero__hint" aria-hidden="true"><span>Scroll to drive</span><i></i></div>
+        <p class="hero__done" aria-hidden="true">Lap complete</p>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <!-- ABOUT SECTION START -->
+    <section class="about" id="about">
+      <div class="kerb"></div>
+      <div class="wrap">
+        <p class="about__label">From the team</p>
+
+        <p class="about__text" id="revealText">We are students who design, build and race a Formula Student car.
+          Multidisciplinary minds working as one crew, from the first sketch to the last lap of race weekend.</p>
+
+        <div class="about__foot">
+          <p>Team Stallions is the official Motorsports team of Nirma University, driven by a passion for
+            innovation, engineering excellence and motorsport.</p>
+          <div class="about__stats">
+            <div class="about__stat"><span>50+</span><small>Team members</small></div>
+            <div class="about__stat"><span>15+</span><small>Seasons</small></div>
+            <div class="about__stat"><span>10+</span><small>Departments</small></div>
+          </div>
+          <a class="btn magnetic" href="#crew">Meet the crew</a>
+        </div>
+      </div>
+    </section>
+    <!-- ABOUT SECTION END -->
+
+
+    <!-- ============ SEASON STRIP ============
+     Add photos: put style="--img:url('images/your-photo.jpg')" on any .frame__img element -->
+
+    <!-- ============ ON TRACK / OFF TRACK ============ -->
+    <section class="duo" id="tracks" aria-label="On track and off track">
+      <article class="panel panel--on">
+        <div class="panel__img"></div>
+        <h2 class="display">On<br>track</h2>
+        <div>
+          <p>Competitions, race weekends and test days. The results and the cars that earned them.</p>
+          <a class="btn btn--ghost" href="#cars">See the cars</a>
+        </div>
+      </article>
+      <article class="panel panel--off">
+        <div class="panel__img"></div>
+        <h2 class="display">Off<br>track</h2>
+        <div>
+          <p>Workshop nights, design reviews and the people who make the car happen.</p>
+          <a class="btn btn--dark" href="#frames">See team life</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="strip" id="frames" aria-label="The season in frames">
+      <div class="strip__sticky">
+        <div class="strip__track" id="stripTrack">
+          <div class="strip__intro">
+            <h2 class="display">The season in frames</h2>
+            <p>From the first sketch to the finish line. Scroll to walk through it.</p>
+          </div>
+
+          <figure class="frame frame--a" data-gallery="design-room">
+            <div class="frame__box">
+              <div class="frame__img"></div><span class="ph-label">Add photo</span>
+              <button class="frame__gallery-btn" aria-label="View design room gallery">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M4 4h4v4H4zm6 0h4v4h-4zm6 0h4v4h-4zM4 10h4v4H4zm6 0h4v4h-4zm6 0h4v4h-4zM4 16h4v4H4zm6 0h4v4h-4zm6 0h4v4h-4z" />
+                </svg>
+                View Gallery
+              </button>
+            </div>
+            <figcaption>In the design room</figcaption>
+          </figure>
+
+          <figure class="frame frame--b" data-gallery="workshop">
+            <div class="frame__box">
+              <div class="frame__img"></div><span class="ph-label">Add photo</span>
+              <button class="frame__gallery-btn" aria-label="View workshop gallery">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M4 4h4v4H4zm6 0h4v4h-4zm6 0h4v4h-4zM4 10h4v4H4zm6 0h4v4h-4zm6 0h4v4h-4zM4 16h4v4H4zm6 0h4v4h-4zm6 0h4v4h-4z" />
+                </svg>
+                View Gallery
+              </button>
+            </div>
+            <figcaption>On the workshop floor</figcaption>
+          </figure>
+
+          <div class="strip__quote">
+            <p>No experience needed. Just dedication and the will to learn.</p>
+          </div>
+
+          <figure class="frame frame--c" data-gallery="test-day">
+            <div class="frame__box">
+              <div class="frame__img"></div><span class="ph-label">Add photo</span>
+              <button class="frame__gallery-btn" aria-label="View test day gallery">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M4 4h4v4H4zm6 0h4v4h-4zm6 0h4v4h-4zM4 10h4v4H4zm6 0h4v4h-4zm6 0h4v4h-4zM4 16h4v4H4zm6 0h4v4h-4zm6 0h4v4h-4z" />
+                </svg>
+                View Gallery
+              </button>
+            </div>
+            <figcaption>Test day</figcaption>
+          </figure>
+
+          <figure class="frame frame--b" data-gallery="race-weekend">
+            <div class="frame__box">
+              <div class="frame__img"></div><span class="ph-label">Add photo</span>
+              <button class="frame__gallery-btn" aria-label="View race weekend gallery">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M4 4h4v4H4zm6 0h4v4h-4zm6 0h4v4h-4zM4 10h4v4H4zm6 0h4v4h-4zm6 0h4v4h-4zM4 16h4v4H4zm6 0h4v4h-4zm6 0h4v4h-4z" />
+                </svg>
+                View Gallery
+              </button>
+            </div>
+            <figcaption>Race weekend</figcaption>
+          </figure>
+
+          <figure class="frame frame--a" data-gallery="whole-crew">
+            <div class="frame__box">
+              <div class="frame__img"></div><span class="ph-label">Add photo</span>
+              <button class="frame__gallery-btn" aria-label="View whole crew gallery">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M4 4h4v4H4zm6 0h4v4h-4zm6 0h4v4h-4zM4 10h4v4H4zm6 0h4v4h-4zm6 0h4v4h-4zM4 16h4v4H4zm6 0h4v4h-4zm6 0h4v4h-4z" />
+                </svg>
+                View Gallery
+              </button>
+            </div>
+            <figcaption>The whole crew</figcaption>
+          </figure>
+
+        </div>
+        <div class="strip__progress" aria-hidden="true"><i id="stripBar"></i></div>
+      </div>
+    </section>
+
+    <!-- ============ CREW ============ -->
+    <section class="crew" id="crew">
+      <div class="wrap">
+        <div class="crew__head">
+          <h2 class="display">Departments</h2>
+          <p>Mechanical, electrical, electronics and statics — every department works side by side to build, race and
+            present the car.</p>
+        </div>
+
+        <div class="stack">
+          <article class="card card--1" style="--n:0">
+            <h3>Mechanical</h3>
+            <div class="card__body">
+              <p>We design, analyse and fabricate the parts that carry the driver and the loads: the structures, vehicle
+                dynamics and drivetrain.</p>
+              <ul class="card__list">
+                <li data-dept="structures">Structures</li>
+                <li data-dept="suspension">Suspension</li>
+                <li data-dept="brakes-wheels">Brakes &amp; Wheels</li>
+                <li data-dept="steering">Steering</li>
+                <li data-dept="drivetrain">Drivetrain</li>
+              </ul>
+            </div>
+          </article>
+          <article class="card card--2" style="--n:1">
+            <h3>Electrical</h3>
+            <div class="card__body">
+              <p>Power, wiring and safety. We move energy where the car needs it and shut it off the moment it must be
+                shut off.</p>
+              <ul class="card__list">
+                <li data-dept="accumulator">Accumulator System</li>
+                <li data-dept="motor-mcu">Motor &amp; MCU</li>
+              </ul>
+            </div>
+          </article>
+          <article class="card card--3" style="--n:2">
+            <h3>Electronics</h3>
+            <div class="card__body">
+              <p>Sensors, control units and data logging. The car's nervous system, and our window into what it is
+                really doing on track.</p>
+              <ul class="card__list">
+                <li data-dept="control-electronics">Control Electronics</li>
+                <li data-dept="embedded-systems">Embedded Systems, DAQ and Telemetry</li>
+              </ul>
+            </div>
+          </article>
+          <article class="card card--4" style="--n:3">
+            <h3>Statics</h3>
+            <div class="card__body">
+              <p>Business plans, cost reports and design presentations. We prove the car on paper before it hits the
+                track.</p>
+              <div class="card__list-cols">
+                <ul class="card__list">
+                  <li data-dept="static-1">Engineering Design</li>
+                  <li data-dept="static-2">Cost & Manufacturing</li>
+                  <li data-dept="static-3">Business Plan & Sales</li>
+                  <li data-dept="static-4">CAE</li>
+                  <li data-dept="static-5">Sustainability</li>
+                </ul>
+                <ul class="card__list">
+                  <li data-dept="static-6">Mathworks Simulations</li>
+                  <li data-dept="static-7">Innovation</li>
+                  <li data-dept="static-8">Validation</li>
+                  <li data-dept="static-9">Media Team</li>
+                  <li data-dept="static-10">Sponsorship & Marketing</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CARS ============
+     EDIT: replace the names below. Add data-img="images/car-2026.jpg" for the hover photo. -->
+    <section class="cars" id="cars">
+      <div class="wrap">
+        <div class="cars__head">
+          <h2 class="display">The cars</h2>
+          <p>Every season ends with a new car. Hover a year to see it, click to explore the full season.</p>
+        </div>
+        <li class="car-row" data-img="E37.jpeg" data-car="e37"><span class="car-row__year">2026</span><span
+            class="car-row__name">
+            E 37
+          </span><span class="car-row__note">Click to see the result</span></li>
+        <li class="car-row" data-img="E35.jpeg" data-car="e35"><span class="car-row__year">2025</span><span
+            class="car-row__name">
+            E 35
+          </span><span class="car-row__note">Click to see the result</span></li>
+        <li class="car-row" data-img="FB_C25(2).jpeg" data-car="c25"><span class="car-row__year">2024</span><span
+            class="car-row__name">C
+            25
+          </span><span class="car-row__note">Click to see the result</span></li>
+        <li class="car-row" data-img="BAJA_E44.jpeg" data-car="e44"><span class="car-row__year">2024</span><span
+            class="car-row__name">E
+            44
+          </span><span class="car-row__note">Click to see the result</span></li>
+        <li class="car-row" data-img="FB_C32(2).jpeg" data-car="c32"><span class="car-row__year">2023</span><span
+            class="car-row__name">C 32
+          </span><span class="car-row__note">Click to see the result</span></li>
+        <li class="car-row" data-img="ESVC_A04.jpeg" data-car="a04"><span class="car-row__year">2021</span><span
+            class="car-row__name">
+            A 04
+          </span><span class="car-row__note">Click to see the result</span></li>
+        </ul>
+      </div>
+    </section>
+    <div class="cars__preview" id="carsPreview" aria-hidden="true"><span>Add photo</span></div>
+
+    <!-- ============ PARTNERS ============
+     EDIT: replace "Sponsor name" with your sponsors' names (or swap in <img> logos) -->
+    <section class="partners" id="partners">
+      <div class="partners__head">
+        <h2 class="display">Partners</h2>
+        <p>Thank you for keeping us on track.</p>
+      </div>
+      <div class="marquee" data-dir="1">
+        <div class="marquee__inner">
+          <span class="marquee__item"><img src="MATTER.png" alt="MATTER" width="393.64" height="100"></span><span
+            class="marquee__item"><img src="ALTIUM.png" alt="ALTIUM" width="337.14" height="100"></span>
+          <span class="marquee__item"><img src="ANSYS.png" alt="ANSYS" width="356.122" height="100"></span>
+          <span class="marquee__item"><img src="SOLIDWORKS.png" alt="SOLIDWORKS" width="230.94" height="100"></span>
+          <span class="marquee__item"><img src="RESTLESS LOGO.png" alt="RESTLESS" width="247.63" height="100"></span>
+          <span class="marquee__item"><img src="XLEX.png" alt="XLEX" width="105.38" height="100"></span>
+          <span class="marquee__item"><img src="PME.png" alt="PME" width="100" height="100"></span>
+          <span class="marquee__item"><img src="SKM.png" alt="SKM" width="340.667" height="100"></span>
+          <span class="marquee__item"><img src="BURNOUT.png" alt="BURNOUT" width="183.23" height="100"></span>
+          <span class="marquee__item"><img src="ACRON.png" alt="ACRON" width="299.70" height="100"></span>
+        </div>
+      </div>
+      <div class="marquee marquee--fill" data-dir="-1">
+        <div class="marquee__inner">
+          <span class="marquee__item">MATTER</span><span class="marquee__item">ALTIUM</span>
+          <span class="marquee__item">ANSYS</span>
+          <span class="marquee__item">RESTLESS</span>
+          <span class="marquee__item">SOLIDWORKS</span>
+          <span class="marquee__item">XLEX</span><span class="marquee__item">PME</span>
+          <span class="marquee__item">SKM INDIA</span><span class="marquee__item">BURNOUT</span>
+          <span class="marquee__item">ACRON</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="faq light" id="faq">
+      <div class="kerb"></div>
+      <div class="wrap faq__grid">
+        <h2 class="display">Questions</h2>
+        <div>
+          <div class="faq__item">
+            <h3><button class="faq__q" aria-expanded="false" aria-controls="a1"><span>When does recruitment
+                  open?</span><i class="faq__plus" aria-hidden="true"></i></button></h3>
+            <div class="faq__a" id="a1" role="region">
+              <div>
+                <p>Recruitments are held annually. Connect with us on socials or via email to get further details.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="faq__item">
+            <h3><button class="faq__q" aria-expanded="false" aria-controls="a2"><span>Who can join?</span><i
+                  class="faq__plus" aria-hidden="true"></i></button></h3>
+            <div class="faq__a" id="a2" role="region">
+              <div>
+                <p>Students from every discipline who care about automotive engineering, innovation and hands-on
+                  learning. You don't need prior experience, only dedication and a willingness to learn.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq__item">
+            <h3><button class="faq__q" aria-expanded="false" aria-controls="a3"><span>What will I learn?</span><i
+                  class="faq__plus" aria-hidden="true"></i></button></h3>
+            <div class="faq__a" id="a3" role="region">
+              <div>
+                <p> Our team provides hands-on experience in automotive design, vehicle dynamics, powertrain systems,
+                  electronics fabrication, and data acquisition. Combined with core competencies in project management
+                  and teamwork, these disciplines build an invaluable foundation that serves our members long after the
+                  racing season concludes.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ JOIN / FOOTER ============ -->
+  <footer class="join" id="join">
+    <div class="kerb"></div>
+    <div class="wrap">
+      <h2 class="join__title display">Build the<br>next car<br>with us</h2>
+      <div class="join__row">
+        <p>We recruit once a year. Follow our social media or email us to get updates.</p>
+        <a class="btn btn--lg magnetic" data-link="email" href="mailto:itnuteamstallions@gmail.com">Join the team</a>
+      </div>
+      <div class="join__cols">
+        <div>
+          <h3>Pages</h3>
+          <ul>
+            <li><a href="#about">Our story</a></li>
+            <li><a href="#frames">The season</a></li>
+            <li><a href="#crew">The crew</a></li>
+            <li><a href="#cars">The cars</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Follow</h3>
+          <ul>
+            <li><a data-link="instagram" href="#">Instagram</a></li>
+            <li><a data-link="linkedin" href="https://www.linkedin.com/company/teamstallions">LinkedIn</a></li>
+            <li><a data-link="youtube" href="#">YouTube</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Sponsor enquiries</h3>
+          <ul>
+            <li><a data-link="email" data-text href="mailto:itnuteamstallions@gmail.com">itnuteamstallions@gmail.com</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="join__legal">
+      <span>&copy; <span id="year">2026</span> Team Stallions, Nirma University</span>
+      <span>Motorsports</span>
+    </div>
+    <div class="join__mark" id="joinMark" aria-hidden="true">Stallions</div>
+  </footer>
+
+  <!-- Smooth scrolling (optional: the site still works if this fails to load) -->
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.11/dist/lenis.min.js"></script>
+
+  <script>
+    (() => {
+      'use strict';
+
+      /* =========================================================
+         CONFIG: change your contact details and social links here
+         ========================================================= */
+      const CONFIG = {
+        email: 'itnuteamstallions@gmail.com',
+        instagram: 'https://www.instagram.com/teamstallionsitnu',                                          // e.g. https://www.instagram.com/yourhandle
+        linkedin: 'https://www.linkedin.com/company/teamstallions',
+        youtube: 'https://www.youtube.com/@teamstallionsitnu8029'
+      };
+
+      /* =========================================================
+         HELPERS
+         ========================================================= */
+      const $ = (s, c = document) => c.querySelector(s);
+      const $$ = (s, c = document) => [...c.querySelectorAll(s)];
+      const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+      const lerp = (a, b, t) => a + (b - a) * t;
+      const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const fine = matchMedia('(hover:hover) and (pointer:fine)').matches;
+
+      let vw = innerWidth, vh = innerHeight;
+      let scrollY = 0, lastY = 0, velocity = 0;
+      let lenis = null;
+
+      /* fill in contact links from CONFIG */
+      $$('[data-link]').forEach(a => {
+        const key = a.dataset.link, val = CONFIG[key];
+        if (!val) return;
+        a.href = key === 'email' ? 'mailto:' + val : val;
+        if (key === 'email' && a.hasAttribute('data-text') || a.closest('.menu__foot') && key === 'email') a.textContent = val;
+        if (val.startsWith('http')) { a.target = '_blank'; a.rel = 'noopener'; }
+      });
+      $('#year').textContent = new Date().getFullYear();
+
+      /* mark any element that has a photo assigned so the "Add photo" label hides */
+      const markImages = () => $$('[style*="--img"]').forEach(el => el.classList.add('has-img'));
+      markImages();
+
+      /* =========================================================
+         SMOOTH SCROLL (Lenis)
+         ========================================================= */
+      if (window.Lenis && !reduced) {
+        lenis = new Lenis({ lerp: 0.085 });
+        lenis.stop();                       // stays locked until "Start the engine"
+      }
+      function goTo(hash) {
+        const el = hash === '#top' ? null : $(hash);
+        if (hash !== '#top' && !el) return;
+        if (lenis) lenis.scrollTo(el || 0, { duration: 1.6 });
+        else (el ? el.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth' }) : scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' }));
+      }
+      document.addEventListener('click', e => {
+        const a = e.target.closest('a[href^="#"]');
+        if (!a || a.getAttribute('href') === '#') return;
+        e.preventDefault();
+        const h = a.getAttribute('href');
+        if (document.body.classList.contains('menu-open')) { setMenu(false); setTimeout(() => goTo(h), 350); }
+        else goTo(h);
+      });
+
+      /* =========================================================
+         LOADER
+         ========================================================= */
+      const loader = $('#loader'), countEl = $('#loaderCount'), barEl = $('#loaderBar'), goBtn = $('#loaderGo');
+      let ready = false, shown = 0, loaderDone = false;
+      const t0 = performance.now();
+      Promise.all([
+        document.fonts ? document.fonts.ready : Promise.resolve(),
+        new Promise(r => document.readyState === 'complete' ? r() : addEventListener('load', r))
+      ]).then(() => ready = true);
+      setTimeout(() => ready = true, 6000);            // never get stuck offline
+
+      function tickLoader(now) {
+        if (loaderDone) return;
+        const t = clamp((now - t0) / (reduced ? 300 : 1800));
+        const eased = 1 - Math.pow(1 - t, 3);
+        shown = Math.max(shown, ready ? eased : Math.min(eased, .9));
+        countEl.textContent = String(Math.round(shown * 100)).padStart(3, '0');
+        barEl.style.transform = `scaleX(${shown})`;
+        if (shown >= 1) {
+          goBtn.disabled = false; goBtn.textContent = 'Ignite the System'; goBtn.classList.remove('btn--ghost');
+          goBtn.focus({ preventScroll: true });
+          return;
+        }
+        requestAnimationFrame(tickLoader);
+      }
+      requestAnimationFrame(tickLoader);
+
+      function start() {
+        if (loaderDone) return;
+        loaderDone = true;
+        document.body.classList.add('is-started');
+        lenis && lenis.start();
+        loader.setAttribute('aria-hidden', 'true'); loader.inert = true;
+        setTimeout(() => loader.remove(), 1500);
+      }
+      goBtn.addEventListener('click', start);
+
+      /* =========================================================
+         MENU
+         ========================================================= */
+      const menu = $('#menu'), menuBtn = $('#menuBtn'), menuFrame = $('#menuFrame'), menuLabel = $('#menuFrameLabel');
+      function setMenu(open) {
+        document.body.classList.toggle('menu-open', open);
+        menuBtn.setAttribute('aria-expanded', open);
+        $('.menu-btn__label', menuBtn).textContent = open ? 'Close' : 'Menu';
+        menu.toggleAttribute('inert', !open);
+        open ? lenis && lenis.stop() : lenis && lenis.start();
+        if (open) $('.menu__list a', menu).focus({ preventScroll: true });
+        else menuBtn.focus({ preventScroll: true });
+      }
+      menuBtn.addEventListener('click', () => setMenu(!document.body.classList.contains('menu-open')));
+      addEventListener('keydown', e => { if (e.key === 'Escape' && document.body.classList.contains('menu-open')) setMenu(false); });
+      $$('.menu__list a').forEach(a => {
+        const show = () => {
+          menuLabel.textContent = a.textContent;
+          menuFrame.style.setProperty('--tone', a.dataset.tone || '#0e1f31');
+          if (a.dataset.img) { menuFrame.style.setProperty('--img', `url("${a.dataset.img}")`); menuFrame.classList.add('has-img'); }
+          else { menuFrame.style.removeProperty('--img'); menuFrame.classList.remove('has-img'); }
+        };
+        a.addEventListener('mouseenter', show);
+        a.addEventListener('focus', show);
+      });
+
+      /* =========================================================
+         HERO: track, car, HUD
+         ========================================================= */
+      const hero = $('#top'), roadSvg = $('#roadSvg'), carSvg = $('#carSvg'), car = $('#car');
+      const roadEls = { kA: $('#roadKerbA'), kB: $('#roadKerbB'), asp: $('#roadAsphalt'), ctr: $('#roadCentre'), trail: $('#roadTrail') };
+      const fills = $$('.hero__title .fill');
+      const hudSpeed = $('#hudSpeed'), hudGear = $('#hudGear'), hudRpm = $('#hudRpm'), hudLap = $('#hudLap'), hudBar = $('#hudBar');
+      const SEGMENTS = 14;
+      for (let i = 0; i < SEGMENTS; i++) hudRpm.appendChild(document.createElement('i'));
+      const rpmSegs = [...hudRpm.children];
+
+      let heroTop = 0, heroH = 0, roadLen = 1, carScale = 1, angle = 0, speedShown = 0, gearShown = '', lastSeg = -1;
+
+      /* Turn a list of points into a smooth curve (Catmull-Rom to Bezier) */
+      function smoothPath(pts) {
+        let d = `M${pts[0][0].toFixed(1)} ${pts[0][1].toFixed(1)}`;
+        for (let i = 0; i < pts.length - 1; i++) {
+          const p0 = pts[i - 1] || pts[i], p1 = pts[i], p2 = pts[i + 1], p3 = pts[i + 2] || p2;
+          const c1 = [p1[0] + (p2[0] - p0[0]) / 6, p1[1] + (p2[1] - p0[1]) / 6];
+          const c2 = [p2[0] - (p3[0] - p1[0]) / 6, p2[1] - (p3[1] - p1[1]) / 6];
+          d += ` C${c1[0].toFixed(1)} ${c1[1].toFixed(1)} ${c2[0].toFixed(1)} ${c2[1].toFixed(1)} ${p2[0].toFixed(1)} ${p2[1].toFixed(1)}`;
+        }
+        return d;
+      }
+
+      /* Build the circuit for the current screen size. Points are fractions of width/height. */
+      function buildTrack() {
+        const portrait = vw / vh < 0.9;
+        /* Keep the bottom corners clear: that's where the dashboard sits. */
+        const pts = (portrait ? [
+          [.16, .70], [.72, .68], [.86, .52], [.30, .47], [.14, .32], [.70, .25], [.86, .13], [.45, .05], [.10, -.12]
+        ] : [
+          [.09, .50], [.22, .38], [.36, .30], [.50, .22], [.62, .31], [.60, .48], [.44, .57], [.43, .70], [.57, .77], [.72, .69], [.80, .50], [.90, .33], [1.14, .30]
+        ]).map(([x, y]) => [x * vw, y * vh]);
+
+        const carLen = clamp(vw * 0.085, 70, 135);
+        carScale = carLen / 118;                       // car artwork is about 118 units long
+        const roadW = 100 * carScale, kerbW = 15 * carScale;
+        const d = smoothPath(pts);
+
+        [roadSvg, carSvg].forEach(s => s.setAttribute('viewBox', `0 0 ${vw} ${vh}`));
+        const set = (el, w, extra = {}) => { el.setAttribute('d', d); el.setAttribute('stroke-width', w); Object.entries(extra).forEach(([k, v]) => el.setAttribute(k, v)); };
+        set(roadEls.kA, roadW + kerbW * 2);
+        set(roadEls.kB, roadW + kerbW * 2, { 'stroke-dasharray': `${kerbW * 1.6} ${kerbW * 1.6}` });
+        set(roadEls.asp, roadW);
+        set(roadEls.ctr, Math.max(2, 3 * carScale), { 'stroke-dasharray': `${22 * carScale} ${26 * carScale}` });
+        roadLen = roadEls.asp.getTotalLength();
+        set(roadEls.trail, Math.max(3, 5 * carScale), { 'stroke-dasharray': roadLen, 'stroke-dashoffset': roadLen });
+      }
+
+      function updateHero() {
+        const p = clamp((scrollY - heroTop) / Math.max(1, heroH - vh));
+        const dist = p * roadLen;
+        const a = roadEls.asp.getPointAtLength(dist);
+        const b = roadEls.asp.getPointAtLength(Math.min(roadLen, dist + 3));
+        const target = Math.atan2(b.y - a.y, b.x - a.x) * 180 / Math.PI;
+        angle += ((((target - angle) % 360) + 540) % 360 - 180) * (angle === 0 && p === 0 ? 1 : .22);
+
+        car.setAttribute('transform', `translate(${a.x.toFixed(1)} ${a.y.toFixed(1)}) rotate(${angle.toFixed(1)}) scale(${carScale.toFixed(3)})`);
+        roadEls.trail.style.strokeDashoffset = roadLen - dist;
+
+        const cut = `inset(0 ${(100 - p * 100).toFixed(2)}% 0 0)`;
+        fills.forEach(f => f.style.clipPath = cut);
+
+        /* dashboard */
+        const moving = p > 0.001 && p < 0.999;
+        const targetSpeed = moving ? clamp(Math.abs(velocity) * 70, 0, 320) : 0;
+        speedShown = lerp(speedShown, targetSpeed, .1);
+        const s = Math.round(speedShown);
+        hudSpeed.textContent = String(s).padStart(3, '0');
+        const limits = [0, 40, 85, 130, 175, 220, 265, 300, 340];
+        let g = 0; while (g < 8 && speedShown >= limits[g + 1]) g++;
+        const gear = s < 3 ? 'N' : String(g + 1);
+        if (gear !== gearShown) { hudGear.textContent = gear; gearShown = gear; }
+        const rpm = s < 3 ? .1 : clamp((speedShown - limits[g]) / (limits[g + 1] - limits[g]));
+        const lit = Math.round((.18 + rpm * .82) * SEGMENTS);
+        if (lit !== lastSeg) {
+          rpmSegs.forEach((el, i) => { el.className = i < lit ? (i >= SEGMENTS - 3 ? 'on hot' : 'on') : ''; });
+          lastSeg = lit;
+        }
+        hudLap.textContent = Math.round(p * 100);
+        hudBar.style.transform = `scaleX(${p})`;
+        hero.classList.toggle('is-moving', p > 0.02);
+        hero.classList.toggle('is-done', p > 0.975);
+      }
+
+      /* =========================================================
+         ABOUT: words light up with scroll
+         ========================================================= */
+      const revealEl = $('#revealText');
+      const words = revealEl.textContent.trim().split(/\s+/);
+      revealEl.innerHTML = words.map(w => `<span class="w">${w}</span>`).join(' ');
+      const wordEls = $$('.w', revealEl);
+      const wordState = new Array(wordEls.length).fill(-1);
+      function updateWords() {
+        const r = revealEl.getBoundingClientRect();
+        if (r.bottom < -100 || r.top > vh + 100) return;
+        const p = reduced ? 1 : clamp((vh * .85 - r.top) / (r.height + vh * .35));
+        const n = wordEls.length;
+        wordEls.forEach((el, i) => {
+          const o = +(.14 + .86 * clamp(p * (n + 5) - i)).toFixed(2);
+          if (o !== wordState[i]) { el.style.opacity = o; wordState[i] = o; }
+        });
+      }
+
+      /* =========================================================
+         SEASON STRIP: vertical scroll drives a horizontal track
+         ========================================================= */
+      const strip = $('#frames'), stripTrack = $('#stripTrack'), stripBar = $('#stripBar');
+      const frames = $$('.frame', stripTrack).map(el => ({ el, img: $('.frame__img', el) }));
+      let stripTop = 0, stripH = 0, stripMax = 0;
+      function updateStrip() {
+        const p = clamp((scrollY - stripTop) / Math.max(1, stripH - vh));
+        const x = -p * stripMax;
+        stripTrack.style.transform = `translate3d(${x.toFixed(1)}px,0,0)`;
+        stripBar.style.transform = `scaleX(${p})`;
+        frames.forEach(f => {
+          const centre = f.left + x + f.width / 2;
+          const off = (centre - vw / 2) / vw;
+          f.img.style.transform = `translate3d(${(-off * 60).toFixed(1)}px,0,0)`;
+        });
+      }
+
+      /* =========================================================
+         CREW: cards stack and shrink as the next one arrives
+         ========================================================= */
+      const cards = $$('.card');
+      function updateCards() {
+        cards.forEach((c, i) => {
+          const next = cards[i + 1];
+          if (!next) return;
+          const gap = next.getBoundingClientRect().top - c.getBoundingClientRect().top;
+          const start = c.offsetHeight + vh * .12, end = 40;
+          const p = clamp((start - gap) / (start - end));
+          c.style.transform = `scale(${(1 - p * .06).toFixed(4)})`;
+          c.style.filter = `brightness(${(1 - p * .4).toFixed(3)})`;
+        });
+      }
+
+      /* =========================================================
+         CARS: floating photo follows the cursor
+         ========================================================= */
+      const preview = $('#carsPreview');
+      const mouse = { x: -999, y: -999, px: -999, py: -999, rot: 0 };
+      const pv = { x: -999, y: -999 };
+      $$('.car-row').forEach(row => {
+        row.addEventListener('mouseenter', () => {
+          const img = row.dataset.img;
+          if (img) { preview.style.setProperty('--img', `url("${img}")`); preview.classList.add('has-img'); }
+          else { preview.style.removeProperty('--img'); preview.classList.remove('has-img'); }
+          preview.classList.add('is-on');
+        });
+        row.addEventListener('mouseleave', () => preview.classList.remove('is-on'));
+      });
+
+      /* =========================================================
+         PARTNERS MARQUEE: base drift + speeds up with scroll
+         ========================================================= */
+      const marquees = $$('.marquee').map(el => {
+        const inner = $('.marquee__inner', el);
+        const group = [...inner.children];
+        for (let i = 0; i < 3; i++) group.forEach(n => { const c = n.cloneNode(true); c.setAttribute('aria-hidden', 'true'); inner.appendChild(c); });
+        return { el, inner, dir: +el.dataset.dir || 1, x: 0, w: 1 };
+      });
+      function updateMarquees() {
+        marquees.forEach(m => {
+          const r = m.el.getBoundingClientRect();
+          if (r.bottom < 0 || r.top > vh) return;
+          m.x += m.dir * (reduced ? 0 : .7 + Math.abs(velocity) * 1.1);
+          m.x = ((m.x % m.w) + m.w) % m.w;
+          m.inner.style.transform = `translate3d(${-m.x}px,0,0)`;
+        });
+      }
+
+      /* =========================================================
+         FAQ
+         ========================================================= */
+      $$('.faq__q').forEach(btn => btn.addEventListener('click', () => {
+        const item = btn.closest('.faq__item');
+        const open = !item.classList.contains('is-open');
+        item.classList.toggle('is-open', open);
+        btn.setAttribute('aria-expanded', open);
+      }));
+
+      /* =========================================================
+         FOOTER wordmark rises into view
+         ========================================================= */
+      const joinEl = $('#join'), joinMark = $('#joinMark');
+      function updateFooter() {
+        const r = joinEl.getBoundingClientRect();
+        if (r.top > vh) return;
+        const p = clamp((vh - r.top) / r.height);          // 0 when footer enters, 1 at the very bottom
+        joinMark.style.transform = `translateY(${(6 + (1 - p) * 45).toFixed(1)}%)`;
+      }
+
+      /* =========================================================
+         TRACK MAP HOVER POPUP – Kari Motor Speedway (Golden 3D Hologram)
+         ========================================================= */
+      const trackPopup = $('#trackPopup');
+      const trackStage = $('#trackPopupStage');
+      const kariItem = $('#fbEventItem');
+      const kariVenue = $('#kariVenueText');
+
+      if (trackPopup && kariItem) {
+        let tpActive = false;
+
+        function positionPopup(cx, cy) {
+          const popW = 380;
+          const popH = 260;
+          const pad = 24;
+          const halfW = popW / 2;
+
+          // If on right side of viewport (like hero__next is), offset leftwards so the track never covers the text
+          let targetX = cx;
+          if (cx > window.innerWidth - 450) {
+            targetX = cx - 170;
+          }
+          const clampedX = Math.max(halfW + pad, Math.min(window.innerWidth - halfW - pad, targetX));
+
+          if (cy - popH < pad + 40) {
+            trackPopup.style.transform = 'translate(-50%, 25px) scale(1)';
+          } else {
+            trackPopup.style.transform = 'translate(-50%, calc(-100% - 20px)) scale(1)';
+          }
+          trackPopup.style.left = clampedX + 'px';
+          trackPopup.style.top = cy + 'px';
+        }
+
+        kariItem.addEventListener('mouseenter', e => {
+          tpActive = true;
+          positionPopup(e.clientX, e.clientY);
+          trackPopup.classList.add('is-visible');
+        });
+
+        kariItem.addEventListener('mouseleave', () => {
+          tpActive = false;
+          trackPopup.classList.remove('is-visible');
+          if (trackStage) trackStage.style.transform = '';
+        });
+
+        kariItem.addEventListener('mousemove', e => {
+          positionPopup(e.clientX, e.clientY);
+          if (!tpActive || !trackStage) return;
+          const rect = kariItem.getBoundingClientRect();
+          const dx = (e.clientX - (rect.left + rect.width / 2)) / (rect.width / 2);
+          const dy = (e.clientY - (rect.top + rect.height / 2)) / (rect.height / 2);
+          const tiltX = -dy * 12;
+          const tiltY = dx * 16;
+          trackStage.style.transform = `perspective(900px) rotateX(${tiltX.toFixed(2)}deg) rotateY(${tiltY.toFixed(2)}deg)`;
+        });
+      }
+
+      /* =========================================================
+         TRACK MAP HOVER POPUP – NATRAX Pithampur (Golden 3D Hologram)
+         ========================================================= */
+      const natraxPopup = $('#natraxPopup');
+      const natraxStage = $('#natraxPopupStage');
+      const eBajaItem = $('#eBajaEventItem');
+
+      if (natraxPopup && eBajaItem) {
+        let natraxActive = false;
+
+        function positionNatraxPopup(cx, cy) {
+          const popW = 380;
+          const popH = 260;
+          const pad = 24;
+          const halfW = popW / 2;
+
+          let targetX = cx;
+          if (cx > window.innerWidth - 450) {
+            targetX = cx - 170;
+          }
+          const clampedX = Math.max(halfW + pad, Math.min(window.innerWidth - halfW - pad, targetX));
+
+          if (cy - popH < pad + 40) {
+            natraxPopup.style.transform = 'translate(-50%, 25px) scale(1)';
+          } else {
+            natraxPopup.style.transform = 'translate(-50%, calc(-100% - 20px)) scale(1)';
+          }
+          natraxPopup.style.left = clampedX + 'px';
+          natraxPopup.style.top = cy + 'px';
+        }
+
+        eBajaItem.addEventListener('mouseenter', e => {
+          natraxActive = true;
+          positionNatraxPopup(e.clientX, e.clientY);
+          natraxPopup.classList.add('is-visible');
+        });
+
+        eBajaItem.addEventListener('mouseleave', () => {
+          natraxActive = false;
+          natraxPopup.classList.remove('is-visible');
+          if (natraxStage) natraxStage.style.transform = '';
+        });
+
+        eBajaItem.addEventListener('mousemove', e => {
+          positionNatraxPopup(e.clientX, e.clientY);
+          if (!natraxActive || !natraxStage) return;
+          const rect = eBajaItem.getBoundingClientRect();
+          const dx = (e.clientX - (rect.left + rect.width / 2)) / (rect.width / 2);
+          const dy = (e.clientY - (rect.top + rect.height / 2)) / (rect.height / 2);
+          const tiltX = -dy * 12;
+          const tiltY = dx * 16;
+          natraxStage.style.transform = `perspective(900px) rotateX(${tiltX.toFixed(2)}deg) rotateY(${tiltY.toFixed(2)}deg)`;
+        });
+      }
+
+      /* =========================================================
+         CURSOR RING + MAGNETIC BUTTONS (desktop only)
+         ========================================================= */
+      const ring = $('#ring');
+      const rp = { x: 0, y: 0 };
+      if (fine) {
+        addEventListener('pointermove', e => {
+          mouse.x = e.clientX; mouse.y = e.clientY;
+          ring.classList.add('is-visible');
+        });
+        document.addEventListener('pointerover', e => ring.classList.toggle('is-active', !!e.target.closest('a,button')));
+        document.addEventListener('mouseleave', () => ring.classList.remove('is-visible'));
+
+        $$('.magnetic').forEach(el => {
+          el.addEventListener('pointermove', e => {
+            const r = el.getBoundingClientRect();
+            el.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * .25}px,${(e.clientY - r.top - r.height / 2) * .35}px)`;
+          });
+          el.addEventListener('pointerleave', () => el.style.transform = '');
+        });
+      }
+      function updatePointer() {
+        if (!fine) return;
+        rp.x = lerp(rp.x, mouse.x, .2); rp.y = lerp(rp.y, mouse.y, .2);
+        ring.style.transform = `translate3d(${rp.x.toFixed(1)}px,${rp.y.toFixed(1)}px,0)`;
+        if (preview.classList.contains('is-on')) {
+          pv.x = lerp(pv.x, mouse.x, .14); pv.y = lerp(pv.y, mouse.y, .14);
+          mouse.rot = lerp(mouse.rot, clamp((mouse.x - pv.x) * .05, -10, 10), .2);
+          const w = preview.offsetWidth, h = preview.offsetHeight;
+          const px = clamp(pv.x - w / 2 + w * .55, 12, vw - w - 12), py = clamp(pv.y - h / 2, 12, vh - h - 12);
+          preview.style.transform = `translate3d(${px.toFixed(1)}px,${py.toFixed(1)}px,0) rotate(${mouse.rot.toFixed(2)}deg) scale(1)`;
+        } else { pv.x = mouse.x; pv.y = mouse.y; }
+      }
+
+      /* =========================================================
+         HEADER THEME: dark text while over light sections
+         ========================================================= */
+      const header = $('#siteHeader');
+      const lightZones = $$('.light, .panel--off');
+      let hitL = false, hitR = false;
+      const overLight = x => lightZones.some(z => { const r = z.getBoundingClientRect(); return r.top <= 36 && r.bottom >= 36 && r.left <= x && r.right >= x; });
+      function updateTheme() {
+        const l = overLight(90), r = overLight(vw - 90);
+        if (l !== hitL) { hitL = l; header.classList.toggle('on-light', l); }
+        if (r !== hitR) { hitR = r; menuBtn.classList.toggle('on-light', r); }
+      }
+
+      /* =========================================================
+         MEASURE + MAIN LOOP
+         ========================================================= */
+      function measure() {
+        vw = innerWidth; vh = innerHeight;
+        const sy = window.scrollY;
+        heroTop = hero.getBoundingClientRect().top + sy; heroH = hero.offsetHeight;
+
+        stripMax = Math.max(0, stripTrack.offsetWidth - vw);
+        const wantH = stripMax + vh;
+        if (Math.abs(strip.offsetHeight - wantH) > 1) strip.style.height = wantH + 'px';
+        stripTop = strip.getBoundingClientRect().top + sy; stripH = strip.offsetHeight;
+        frames.forEach(f => { f.left = f.el.offsetLeft; f.width = f.el.offsetWidth; });
+
+        marquees.forEach(m => { m.w = m.inner.scrollWidth / 4; });
+        buildTrack();
+      }
+      let measureQueued = false;
+      const queueMeasure = () => { if (measureQueued) return; measureQueued = true; requestAnimationFrame(() => { measureQueued = false; measure(); }); };
+      addEventListener('resize', queueMeasure);
+      addEventListener('load', queueMeasure);
+      document.fonts && document.fonts.ready.then(queueMeasure);
+      if (window.ResizeObserver) new ResizeObserver(queueMeasure).observe(document.body);
+
+      let lastT = performance.now();
+      function frame(t) {
+        lenis && lenis.raf(t);
+        const dt = Math.max(1, t - lastT); lastT = t;
+        scrollY = window.scrollY;
+        velocity = lerp(velocity, (scrollY - lastY) / dt, .2);
+
+        const dy = scrollY - lastY;
+        if (scrollY > 240 && dy > 2) header.classList.add('is-hidden');
+        else if (dy < -2 || scrollY < 240) header.classList.remove('is-hidden');
+        lastY = scrollY;
+
+        updateHero();
+        updateWords();
+        updateStrip();
+        updateCards();
+        updateMarquees();
+        updateFooter();
+        updateTheme();
+        updatePointer();
+        requestAnimationFrame(frame);
+      }
+
+      measure();
+      requestAnimationFrame(frame);
+    })();
+  </script>
+
+  <!-- ============ GALLERY OVERLAY ============ -->
+  <div class="gallery-overlay" id="galleryOverlay" aria-hidden="true">
+    <div class="gallery-overlay__header">
+      <h2 class="gallery-overlay__title" id="galleryTitle">Gallery</h2>
+      <button class="gallery-overlay__close" id="galleryClose" aria-label="Close gallery">
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M18.3 5.7a1 1 0 0 0-1.4 0L12 10.6 7.1 5.7a1 1 0 0 0-1.4 1.4L10.6 12l-4.9 4.9a1 1 0 1 0 1.4 1.4L12 13.4l4.9 4.9a1 1 0 0 0 1.4-1.4L13.4 12l4.9-4.9a1 1 0 0 0 0-1.4z" />
+        </svg>
+      </button>
+    </div>
+    <div class="gallery-overlay__grid" id="galleryGrid"></div>
+  </div>
+
+  <!-- ============ LIGHTBOX ============ -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Close lightbox">
+      <svg viewBox="0 0 24 24">
+        <path
+          d="M18.3 5.7a1 1 0 0 0-1.4 0L12 10.6 7.1 5.7a1 1 0 0 0-1.4 1.4L10.6 12l-4.9 4.9a1 1 0 1 0 1.4 1.4L12 13.4l4.9 4.9a1 1 0 0 0 1.4-1.4L13.4 12l4.9-4.9a1 1 0 0 0 0-1.4z" />
+      </svg>
+    </button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Previous image">
+      <svg viewBox="0 0 24 24">
+        <path d="M15.4 7.4L14 6l-6 6 6 6 1.4-1.4L10.8 12z" />
+      </svg>
+    </button>
+    <img class="lightbox__img" id="lightboxImg" src="" alt="">
+    <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Next image">
+      <svg viewBox="0 0 24 24">
+        <path d="M10 6L8.6 7.4 13.2 12l-4.6 4.6L10 18l6-6z" />
+      </svg>
+    </button>
+    <span class="lightbox__counter" id="lightboxCounter"></span>
+  </div>
+
+  <script>
+    /* =========================================================
+       GALLERY SYSTEM
+       ---------------------------------------------------------
+       HOW TO ADD YOUR IMAGES:
+       1. Find the gallery ID below that matches the section
+          (design-room, workshop, test-day, race-weekend, whole-crew)
+       2. Add image objects to the `images` array:
+          { src: 'path/to/your-image.jpg', alt: 'Description' }
+       3. Set `placeholders` to 0 (or any number of empty
+          slots you still want to show).
+       ========================================================= */
+    (function () {
+      const galleryData = {
+        'design-room': {
+          title: 'In the Design Room',
+          images: [
+            /* -------- ADD YOUR DESIGN ROOM IMAGES BELOW --------
+             * Example:
+             * { src: 'images/design-room-01.jpg', alt: 'CAD modelling session' },
+             * { src: 'images/design-room-02.jpg', alt: 'Design review meeting' },
+             * ---------------------------------------------------- */
+          ],
+          placeholders: 6  // number of empty placeholder slots to show
+        },
+        'workshop': {
+          title: 'On the Workshop Floor',
+          images: [
+            /* -------- ADD YOUR WORKSHOP IMAGES BELOW --------
+             * Example:
+             * { src: 'images/workshop-01.jpg', alt: 'Welding the chassis' },
+             * { src: 'images/workshop-02.jpg', alt: 'Wiring harness assembly' },
+             * ------------------------------------------------ */
+            { src: 'CW1.jpeg' },
+            { src: 'CW2.jpeg' },
+            { src: 'CW3.jpeg' },
+            { src: 'CW4.jpeg' },
+            { src: 'CW5.jpeg' },
+            { src: 'CW6.jpeg' },
+            { src: 'CW7.jpeg' },
+            { src: 'CW8.jpeg' },
+          ],
+        },
+        'test-day': {
+          title: 'Test Day',
+          images: [
+            /* -------- ADD YOUR TEST DAY IMAGES BELOW --------
+             * Example:
+             * { src: 'images/test-01.jpg', alt: 'First shakedown run' },
+             * { src: 'images/test-02.jpg', alt: 'Data logging session' },
+             * ------------------------------------------------ */
+            { src: 'test_1.jpg' },
+            { src: 'test_2.jpg' },
+            { src: 'test_3.jpg' },
+            { src: 'test_4.jpg' },
+            { src: 'test_5.jpg' },
+            { src: 'test_6.jpg' },
+            { src: 'test_7.jpg' },
+            { src: 'test_8.jpg' },
+          ],
+        },
+        'race-weekend': {
+          title: 'Race Weekend',
+          images: [
+            /* -------- ADD YOUR RACE WEEKEND IMAGES BELOW --------
+             * Example:
+             * { src: 'images/race-01.jpg', alt: 'Scrutineering' },
+             * { src: 'images/race-02.jpg', alt: 'On the starting grid' },
+             * ---------------------------------------------------- */
+            { src: 'C25comp1.jpeg' },
+            { src: 'C25comp2.jpeg' },
+            { src: 'C25comp4.jpeg' },
+            { src: 'C25comp5.jpeg' },
+            { src: 'C25comp6.jpeg' },
+            { src: 'E37comp1.jpeg' },
+            { src: 'E37comp2.jpeg' },
+          ],
+        },
+        'whole-crew': {
+          title: 'The Whole Crew',
+          images: [
+            /* -------- ADD YOUR CREW IMAGES BELOW --------
+             * Example:
+             * { src: 'images/crew-01.jpg', alt: 'Full team photo' },
+             * { src: 'images/crew-02.jpg', alt: 'Celebration after podium' },
+             * ---------------------------------------------- */
+            { src: 'E37compteam1.jpeg' },
+            { src: 'E37compteam2.jpeg' },
+            { src: 'E37compteam4.jpeg' },
+            { src: 'E37compteam5.jpeg' },
+            { src: 'E37compteam6.jpeg' },
+            { src: 'C25comp1.jpeg' },
+            { src: 'C25comp4.jpeg' },
+            { src: 'C25comp5.jpeg' },
+            { src: 'C25comp6.jpeg' },
+          ],
+        }
+      };
+
+      const overlay = document.getElementById('galleryOverlay');
+      const grid = document.getElementById('galleryGrid');
+      const titleEl = document.getElementById('galleryTitle');
+      const closeBtn = document.getElementById('galleryClose');
+      const lightbox = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lightboxImg');
+      const lbClose = document.getElementById('lightboxClose');
+      const lbPrev = document.getElementById('lightboxPrev');
+      const lbNext = document.getElementById('lightboxNext');
+      const lbCounter = document.getElementById('lightboxCounter');
+
+      let currentImages = [];
+      let currentIdx = 0;
+
+      /* ---------- Open gallery ---------- */
+      function openGallery(galleryId) {
+        const data = galleryData[galleryId];
+        if (!data) return;
+
+        titleEl.textContent = data.title;
+        grid.innerHTML = '';
+        currentImages = data.images;
+
+        // Render real images
+        data.images.forEach(function (img, i) {
+          const item = document.createElement('div');
+          item.className = 'gallery-overlay__item';
+          item.innerHTML = '<img src="' + img.src + '" alt="' + (img.alt || '') + '" loading="lazy">';
+          item.addEventListener('click', function () { openLightbox(i); });
+          grid.appendChild(item);
+        });
+
+        // Render placeholder slots
+        var placeholderCount = data.placeholders || 0;
+        for (var p = 0; p < placeholderCount; p++) {
+          var ph = document.createElement('div');
+          ph.className = 'gallery-overlay__placeholder';
+          ph.innerHTML = '<svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zM8.5 13.5l2.5 3L14.5 12l4.5 6H5l3.5-4.5z"/></svg><span>Add image</span>';
+          grid.appendChild(ph);
+        }
+
+        overlay.classList.add('is-open');
+        overlay.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      /* ---------- Close gallery ---------- */
+      function closeGallery() {
+        overlay.classList.remove('is-open');
+        overlay.setAttribute('aria-hidden', 'true');
+        closeLightbox();
+        document.body.style.overflow = '';
+      }
+
+      /* ---------- Lightbox ---------- */
+      function openLightbox(idx) {
+        if (!currentImages.length) return;
+        currentIdx = idx;
+        lbImg.src = currentImages[idx].src;
+        lbImg.alt = currentImages[idx].alt || '';
+        lbCounter.textContent = (idx + 1) + ' / ' + currentImages.length;
+        lightbox.classList.add('is-open');
+        lightbox.setAttribute('aria-hidden', 'false');
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('is-open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        lbImg.src = '';
+      }
+
+      function showPrev() {
+        if (!currentImages.length) return;
+        currentIdx = (currentIdx - 1 + currentImages.length) % currentImages.length;
+        lbImg.src = currentImages[currentIdx].src;
+        lbImg.alt = currentImages[currentIdx].alt || '';
+        lbCounter.textContent = (currentIdx + 1) + ' / ' + currentImages.length;
+      }
+
+      function showNext() {
+        if (!currentImages.length) return;
+        currentIdx = (currentIdx + 1) % currentImages.length;
+        lbImg.src = currentImages[currentIdx].src;
+        lbImg.alt = currentImages[currentIdx].alt || '';
+        lbCounter.textContent = (currentIdx + 1) + ' / ' + currentImages.length;
+      }
+
+      /* ---------- Event Listeners ---------- */
+      // "View Gallery" buttons on each frame
+      document.querySelectorAll('.frame__gallery-btn').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          var frame = btn.closest('.frame');
+          if (frame && frame.dataset.gallery) {
+            openGallery(frame.dataset.gallery);
+          }
+        });
+      });
+
+      // Gallery close
+      closeBtn.addEventListener('click', closeGallery);
+      overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) closeGallery();
+      });
+
+      // Lightbox controls
+      lbClose.addEventListener('click', function (e) { e.stopPropagation(); closeLightbox(); });
+      lbPrev.addEventListener('click', function (e) { e.stopPropagation(); showPrev(); });
+      lbNext.addEventListener('click', function (e) { e.stopPropagation(); showNext(); });
+      lightbox.addEventListener('click', function (e) {
+        if (e.target === lightbox) closeLightbox();
+      });
+
+      // Keyboard navigation
+      document.addEventListener('keydown', function (e) {
+        if (lightbox.classList.contains('is-open')) {
+          if (e.key === 'Escape') closeLightbox();
+          else if (e.key === 'ArrowLeft') showPrev();
+          else if (e.key === 'ArrowRight') showNext();
+        } else if (overlay.classList.contains('is-open')) {
+          if (e.key === 'Escape') closeGallery();
+        }
+      });
+    })();
+  </script>
+
+  <!-- ============ TEAM MEMBERS OVERLAY ============ -->
+  <div class="team-overlay" id="teamOverlay" aria-hidden="true">
+    <div class="team-overlay__header">
+      <h2 class="team-overlay__title" id="teamTitle">Department</h2>
+      <button class="team-overlay__close" id="teamClose" aria-label="Close team gallery">
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M18.3 5.7a1 1 0 0 0-1.4 0L12 10.6 7.1 5.7a1 1 0 0 0-1.4 1.4L10.6 12l-4.9 4.9a1 1 0 1 0 1.4 1.4L12 13.4l4.9 4.9a1 1 0 0 0 1.4-1.4L13.4 12l4.9-4.9a1 1 0 0 0 0-1.4z" />
+        </svg>
+      </button>
+    </div>
+    <div class="team-overlay__grid" id="teamGrid"></div>
+  </div>
+
+  <script>
+    /* =========================================================
+       TEAM MEMBERS GALLERY
+       ---------------------------------------------------------
+       HOW TO ADD TEAM MEMBERS:
+       1. Find the department ID below (e.g. 'structures',
+          'suspension', 'brakes-wheels', 'steering', 'static-1', etc.)
+       2. Add member objects to the `members` array:
+          { photo: 'images/member.jpg', name: 'Full Name', position: 'Role Title' }
+       3. If a member has no photo yet, omit the `photo` field
+          or set it to '' — a placeholder silhouette will show.
+       4. Reduce `placeholders` to 0 once the team is filled.
+       ========================================================= */
+    (function () {
+      var teamData = {
+
+        /* ═══════════════ MECHANICAL ═══════════════ */
+
+        'structures': {
+          title: 'Structures',
+          discipline: 'Mechanical',
+          members: [
+            /* -------- ADD STRUCTURES MEMBERS BELOW --------
+             * Example:
+             * { photo: 'images/members/john.jpg', name: 'John Doe', position: 'Team Lead' },
+             * { photo: 'images/members/jane.jpg', name: 'Jane Smith', position: 'Design Engineer' },
+             * { photo: '', name: 'New Member', position: 'Analyst' },
+             * ------------------------------------------------ */
+            { photo: 'Harshrajsinh Makwana.jpg', name: 'Harshrajsinh Makwana', position: 'Structures Lead' },
+            { photo: 'Hasya Dhameliya.jpg', name: 'Hasya Dhameliya', position: 'Structures Lead & Welder' },
+            { photo: 'Heet Patel.jpeg', name: 'Heet Patel', position: 'Structures' },
+            { photo: 'Krish Bhalala.jpeg', name: 'Krish Bhalala', position: 'Structures' },
+          ],
+        },
+
+        'suspension': {
+          title: 'Suspension',
+          discipline: 'Mechanical — Vehicle Dynamics',
+          members: [
+            /* -------- ADD SUSPENSION MEMBERS BELOW --------
+             * { photo: 'images/members/name.jpg', name: 'Full Name', position: 'Role' },
+             * ---------------------------------------------- */
+            { photo: 'Dhvanil Changela.jpg', name: 'Dhvanil Changela', position: 'Suspension Lead' },
+            { photo: 'Mahek Thacker.jpg', name: 'Mahek Thacker', position: 'Suspension Lead & Treasurer' },
+            { photo: 'Shiv Chaudhary.jpeg', name: 'Shiv Chaudhary', position: 'Suspension' },
+            { photo: 'Dhruv Patel.jpeg', name: 'Dhruv Patel', position: 'Suspension' },
+          ],
+        },
+
+        'brakes-wheels': {
+          title: 'Brakes & Wheels',
+          discipline: 'Mechanical — Vehicle Dynamics',
+          members: [
+            /* -------- ADD BRAKES & WHEELS MEMBERS BELOW --------
+             * { photo: 'images/members/name.jpg', name: 'Full Name', position: 'Role' },
+             * --------------------------------------------------- */
+            { photo: 'Palash Agarwal.jpg', name: 'Palash Agarwal', position: 'Brakes & Wheels Lead' },
+            { photo: 'Parthiv Bhanderi.jpeg', name: 'Parthiv Bhanderi', position: 'Brakes & Wheels' },
+          ],
+        },
+
+        'steering': {
+          title: 'Steering',
+          discipline: 'Mechanical — Vehicle Dynamics',
+          members: [
+            /* -------- ADD STEERING MEMBERS BELOW --------
+             * { photo: 'images/members/name.jpg', name: 'Full Name', position: 'Role' },
+             * -------------------------------------------- */
+            { photo: 'Krisha Doshi.jpg', name: 'Krisha Doshi', position: 'Steering Lead' },
+            { photo: 'Viram Ranpura.jpeg', name: 'Viram Ranpura', position: 'Steering' },
+            { photo: 'Himangi Mangal.jpeg', name: 'Himangi Mangal', position: 'Steering' },
+          ],
+        },
+
+        'drivetrain': {
+          title: 'Drivetrain',
+          discipline: 'Mechanical',
+          members: [
+            /* -------- ADD DRIVETRAIN MEMBERS BELOW --------
+             * Example:
+             * { photo: 'images/members/ravi.jpg', name: 'Ravi Patel', position: 'Drivetrain Lead' },
+             * ------------------------------------------------ */
+            { photo: 'Yug Jani.jpg', name: 'Yug Jani', position: 'Captain & Drivetrain Lead & Welder' },
+            { photo: 'Atmaj Joshi.jpg', name: 'Atmaj Joshi', position: 'Drivetrain Lead' },
+            { photo: 'Mahin Tanna.jpeg', name: 'Mahin Tanna', position: 'Drivetrain' },
+            { photo: 'Purva Mehta.jpeg', name: 'Purva Mehta', position: 'Drivetrain' },
+          ],
+        },
+
+        /* ═══════════════ ELECTRICAL ═══════════════ */
+
+        'accumulator': {
+          title: 'Accumulator System',
+          discipline: 'Electrical',
+          members: [
+            /* -------- ADD ACCUMULATOR MEMBERS BELOW --------
+             * Example:
+             * { photo: 'images/members/priya.jpg', name: 'Priya Shah', position: 'Accumulator Lead' },
+             * ------------------------------------------------ */
+            { photo: 'Mantram Vyas.jpg', name: 'Mantram Vyas', position: 'HV Lead' },
+            { photo: 'Daksh Chaudhary.jpeg', name: 'Daksh Chaudhary', position: 'Accumulator & Simulations' },
+            { photo: 'Kadamb Poshiya.jpeg', name: 'Kadamb Poshiya', position: 'BMS & Simulations' },
+            { photo: 'Vishwa Kansara.PNG', name: 'Vishwa Kansara', position: 'Charger' },
+          ],
+        },
+
+        'motor-mcu': {
+          title: 'Motor & MCU',
+          discipline: 'Electrical',
+          members: [
+            /* -------- ADD MOTOR & MCU MEMBERS BELOW --------
+             * Example:
+             * { photo: 'images/members/amit.jpg', name: 'Amit Verma', position: 'Motor Lead' },
+             * ------------------------------------------------ */
+            { photo: 'Mantram Vyas.jpg', name: 'Mantram Vyas', position: 'HV Lead' },
+            { photo: 'Parva Vyas.PNG', name: 'Parva Vyas', position: 'Motor Performance' },
+            { photo: 'Akhil Tiwari.jpeg', name: 'Akhil Tiwari', position: 'Motor Control Unit' },
+            { photo: 'Divyam Patel.PNG', name: 'Divyam Patel', position: 'Motor & Simulations' },
+            { photo: 'Prayush Wankawala.jpeg', name: 'Prayush Wankawala', position: 'Motor' },
+          ],
+        },
+
+
+        /* ═══════════════ ELECTRONICS ═══════════════ */
+        'control-electronics': {
+          title: 'Control Electronics',
+          discipline: 'Electronics',
+          members: [
+            /* -------- ADD CONTROL ELECTRONICS MEMBERS BELOW --------
+             * Example:
+             * { photo: 'images/members/vikram.jpg', name: 'Vikram Rao', position: 'Controls Lead' },
+             * -------------------------------------------------------- */
+            { photo: 'Samyak Mehta.jpg', name: 'Samyak Mehta', position: 'Control Electronics Lead' },
+            { photo: 'Ruchit Patel.jpeg', name: 'Ruchit Patel', position: 'Control Electronics' },
+            { photo: 'Dhyey Pathak.jpeg', name: 'Dhyey Pathak', position: 'Control Electronics' },
+            { photo: 'Henil Patel.jpeg', name: 'Henil Patel', position: 'Control Electronics' },
+          ],
+        },
+        'embedded-systems': {
+          title: 'Embedded Systems, DAQ and Telemetry',
+          discipline: 'Electronics',
+          members: [
+            /* -------- ADD EMBEDDED SYSTEMS MEMBERS BELOW --------
+             * Example:
+             * { photo: 'images/members/ananya.jpg', name: 'Ananya Gupta', position: 'Embedded Lead' },
+             * ----------------------------------------------------- */
+            { photo: 'Trisha Shah.jpg', name: 'Trisha Shah', position: 'Embedded Lead & Vice Captain' },
+            { photo: 'Ishaan Lakhani.PNG', name: 'Ishaan Lakhani', position: 'Embedded, DAQ & Telemetry' },
+            { photo: 'Priyanshu Vanani.jpeg', name: 'Priyanshu Vanani', position: 'Embedded, DAQ & Telemetry' },
+          ],
+        },
+        /* ═══════════════ STATICS ═══════════════ */
+
+        'static-1': {
+          title: 'Engineering Design',
+          discipline: 'Statics',
+          members: [
+            /* -------- ADD MEMBERS BELOW -------- */
+            { photo: 'Mahin Tanna.jpeg', name: 'Mahin Tanna', },
+            { photo: 'Shiv Chaudhary.jpeg', name: 'Shiv Chaudhary', },
+            { photo: 'Heet Patel.jpeg', name: 'Heet Patel', },
+            { photo: 'Dhyey Pathak.jpeg', name: 'Dhyey Pathak', },
+            { photo: 'Akhil Tiwari.jpeg', name: 'Akhil Tiwari', },
+            { photo: 'Priyanshu Vanani.jpeg', name: 'Priyanshu Vanani', },
+            { photo: 'Kadamb Poshiya.jpeg', name: 'Kadamb Poshiya', },
+            { photo: 'Himangi Mangal.jpeg', name: 'Himangi Mangal', },
+          ],
+        },
+
+        'static-2': {
+          title: 'Cost & Manufacturing',
+          discipline: 'Statics',
+          members: [
+            /* -------- ADD MEMBERS BELOW -------- */
+            { photo: 'Mahek Thacker.jpg', name: 'Mahek Thacker', },
+            { photo: 'Samyak Mehta.jpg', name: 'Samyak Mehta', },
+            { photo: 'Ruchit Patel.jpeg', name: 'Ruchit Patel', },
+            { photo: 'Ishaan Lakhani.PNG', name: 'Ishaan Lakhani', },
+            { photo: 'Parva Vyas.PNG', name: 'Parva Vyas', },
+            { photo: 'Heet Patel.jpeg', name: 'Heet Patel', },
+          ],
+        },
+        'static-3': {
+          title: 'Business Plan & Sales',
+          discipline: 'Statics',
+          members: [
+            /* -------- ADD MEMBERS BELOW -------- */
+            { photo: 'Trisha Shah.jpg', name: 'Trisha Shah', position: 'Business Plan & Sales Lead & Statics Lead' },
+            { photo: 'Mahek Thacker.jpg', name: 'Mahek Thacker', },
+            { photo: 'Priyanshu Vanani.jpeg', name: 'Priyanshu Vanani', },
+            { photo: 'Prayush Wankawala.jpeg', name: 'Prayush Wankawala', },
+            { photo: 'Mahin Tanna.jpeg', name: 'Mahin Tanna', },
+            { photo: 'Himangi Mangal.jpeg', name: 'Himangi Mangal', },
+          ],
+        },
+        'static-4': {
+          title: 'CAE',
+          discipline: 'Statics',
+          members: [
+            /* -------- ADD MEMBERS BELOW -------- */
+            { photo: 'Atmaj Joshi.jpg', name: 'Atmaj Joshi', position: 'CAE Lead' },
+            { photo: 'Daksh Chaudhary.jpeg', name: 'Daksh Chaudhary', },
+            { photo: 'Divyam Patel.PNG', name: 'Divyam Patel', },
+            { photo: 'Parthiv Bhanderi.jpeg', name: 'Parthiv Bhanderi', },
+            { photo: 'Dhyey Pathak.jpeg', name: 'Dhyey pathak', },
+            { photo: 'Prayush Wankawala.jpeg', name: 'Prayush Wankawala', },
+            { photo: 'Krish Bhalala.jpeg', name: 'Krish Bhalala', },
+          ],
+        },
+
+        'static-5': {
+          title: 'Sustainability',
+          discipline: 'Statics',
+          members: [
+            /* -------- ADD MEMBERS BELOW -------- */
+            { photo: 'Krisha Doshi.jpg', name: 'Krisha Doshi', position: 'Sustainability Lead' },
+            { photo: 'Mantram Vyas.jpg', name: 'Mantram Vyas', position: 'Sustainability Lead' },
+            { photo: 'Atmaj Joshi.jpg', name: 'Atmaj Joshi', position: 'Sustainability Lead' },
+            { photo: 'Parva Vyas.PNG', name: 'Parva Vyas', },
+            { photo: 'Divyam Patel.PNG', name: 'Divyam Patel', },
+            { photo: 'Henil Patel.jpeg', name: 'Henil Patel', },
+            { photo: 'Purva Mehta.jpeg', name: 'Purva Mehta', },
+            { photo: 'Himangi Mangal.jpeg', name: 'Himangi Mangal', },
+          ],
+        },
+
+        'static-6': {
+          title: 'Mathworks Simulations',
+          discipline: 'Statics',
+          members: [
+            /* -------- ADD MEMBERS BELOW -------- */
+            { photo: 'Mantram Vyas.jpg', name: 'Mantram Vyas', },
+            { photo: 'Viram Ranpura.jpeg', name: 'Viram Ranpura', },
+            { photo: 'Shiv Chaudhary.jpeg', name: 'Shiv Chaudhary', },
+            { photo: 'Kadamb Poshiya.jpeg', name: 'Kadamb Poshiya', },
+            { photo: 'Daksh Chaudhary.jpeg', name: 'Daksh Chaudhary', },
+            { photo: 'Akhil Tiwari.jpeg', name: 'Akhil Tiwari', },
+            { photo: 'Purva Mehta.jpeg', name: 'Purva Mehta', },
+          ],
+        },
+
+        'static-7': {
+          title: 'Innovation',
+          discipline: 'Statics',
+          members: [
+            /* -------- ADD MEMBERS BELOW -------- */
+            { photo: 'Ruchit Patel.jpeg', name: 'Ruchit Patel', },
+            { photo: 'Henil Patel.jpeg', name: 'Henil Patel', },
+            { photo: 'Dhyey Pathak.jpeg', name: 'Dhyey Pathak', },
+            { photo: 'Akhil Tiwari.jpeg', name: 'Akhil Tiwari', },
+          ],
+        },
+
+        'static-8': {
+          title: 'Validation',
+          discipline: 'Statics',
+          members: [
+            /* -------- ADD MEMBERS BELOW -------- */
+            { photo: 'Divyam Patel.PNG', name: 'Divyam Patel', },
+            { photo: 'Vishwa Kansara.PNG', name: 'Vishwa Kansara', },
+            { photo: 'Purva Mehta.jpeg', name: 'Purva Mehta', },
+            { photo: 'Himangi Mangal.jpeg', name: 'Himangi Mangal', },
+          ],
+        },
+
+        'static-9': {
+          title: 'Media Team',
+          discipline: 'Statics',
+          members: [
+            /* -------- ADD MEMBERS BELOW -------- */
+            { photo: 'Dhvanil Changela.jpg', name: 'Dhvanil Changela', },
+            { photo: 'Samyak Mehta.jpg', name: 'Samyak Mehta', },
+            { photo: 'Ishaan Lakhani.PNG', name: 'Ishaan Lakhani', },
+            { photo: 'Priyanshu Vanani.jpeg', name: 'Priyanshu Vanani', },
+            { photo: 'Viram Ranpura.jpeg', name: 'Viram Ranpura', },
+            { photo: 'Purva Mehta.jpeg', name: 'Purva Mehta', },
+
+          ],
+        },
+
+        'static-10': {
+          title: 'Sponsorship & Marketing',
+          discipline: 'Statics',
+          members: [
+            /* -------- ADD MEMBERS BELOW -------- */
+            { photo: 'Samyak Mehta.jpg', name: 'Samyak Mehta', },
+            { photo: 'Priyanshu Vanani.jpeg', name: 'Priyanshu Vanani', },
+            { photo: 'Parva Vyas.PNG', name: 'Parva Vyas', },
+            { photo: 'Ruchit Patel.jpeg', name: 'Ruchit Patel', },
+            { photo: 'Akhil Tiwari.jpeg', name: 'Akhil Tiwari', },
+
+          ],
+        }
+
+      };
+
+      var teamOverlay = document.getElementById('teamOverlay');
+      var teamGrid = document.getElementById('teamGrid');
+      var teamTitle = document.getElementById('teamTitle');
+      var teamCloseEl = document.getElementById('teamClose');
+
+      var personSVG = '<svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>';
+
+      function openTeam(deptId) {
+        var data = teamData[deptId];
+        if (!data) return;
+
+        teamTitle.innerHTML = '<span>' + data.discipline + '</span> — ' + data.title;
+        teamGrid.innerHTML = '';
+
+        // Render member cards
+        data.members.forEach(function (member) {
+          var card = document.createElement('div');
+          card.className = 'member-card';
+
+          var photoHTML;
+          if (member.photo) {
+            photoHTML = '<div class="member-card__photo"><img src="' + member.photo + '" alt="' + (member.name || '') + '" loading="lazy"></div>';
+          } else {
+            photoHTML = '<div class="member-card__photo"><div class="member-card__photo-placeholder">' + personSVG + '</div></div>';
+          }
+
+          card.innerHTML = photoHTML +
+            '<div class="member-card__info">' +
+            '<div class="member-card__name">' + (member.name || 'Team Member') + '</div>' +
+            '<div class="member-card__position">' + (member.position || 'Member') + '</div>' +
+            '</div>';
+
+          teamGrid.appendChild(card);
+        });
+
+        // Render placeholder slots
+        var phCount = data.placeholders || 0;
+        for (var p = 0; p < phCount; p++) {
+          var ph = document.createElement('div');
+          ph.className = 'member-card member-card--empty';
+          ph.innerHTML =
+            '<div class="member-card__photo"><div class="member-card__photo-placeholder">' + personSVG + '</div></div>' +
+            '<div class="member-card__info">' +
+            '<div class="member-card__name">Add member</div>' +
+            '<div class="member-card__position">Position</div>' +
+            '</div>';
+          teamGrid.appendChild(ph);
+        }
+
+        teamOverlay.classList.add('is-open');
+        teamOverlay.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeTeam() {
+        teamOverlay.classList.remove('is-open');
+        teamOverlay.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      // Click listeners on department list items
+      document.querySelectorAll('.card__list li[data-dept]').forEach(function (li) {
+        li.addEventListener('click', function () {
+          openTeam(li.dataset.dept);
+        });
+      });
+
+      // Close button
+      teamCloseEl.addEventListener('click', closeTeam);
+
+      // Click outside to close
+      teamOverlay.addEventListener('click', function (e) {
+        if (e.target === teamOverlay) closeTeam();
+      });
+
+      // Escape key
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && teamOverlay.classList.contains('is-open')) {
+          closeTeam();
+        }
+      });
+    })();
+  </script>
+
+  <!-- ============ CAR SEASON OVERLAY ============ -->
+  <div class="car-overlay" id="carOverlay" aria-hidden="true">
+    <div class="car-overlay__header">
+      <h2 class="car-overlay__title" id="carOverlayTitle">Season</h2>
+      <button class="car-overlay__close" id="carOverlayClose" aria-label="Close car season">
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M18.3 5.7a1 1 0 0 0-1.4 0L12 10.6 7.1 5.7a1 1 0 0 0-1.4 1.4L10.6 12l-4.9 4.9a1 1 0 1 0 1.4 1.4L12 13.4l4.9 4.9a1 1 0 0 0 1.4-1.4L13.4 12l4.9-4.9a1 1 0 0 0 0-1.4z" />
+        </svg>
+      </button>
+    </div>
+    <div class="car-overlay__hero" id="carOverlayHero"></div>
+    <h3 class="car-overlay__gallery-title">Season Gallery</h3>
+    <div class="car-overlay__gallery" id="carOverlayGallery"></div>
+  </div>
+
+  <script>
+    /* =========================================================
+       CAR SEASON OVERLAY
+       ---------------------------------------------------------
+       HOW TO ADD CAR DATA:
+       1. Find the car ID below (e.g. 'e41', 'e37', 'c25', etc.)
+       2. Update the fields: heroImg, name, year, result, stats
+       3. Add gallery images to the `gallery` array:
+          { src: 'images/cars/photo.jpg', alt: 'Description' }
+       4. Set `placeholders` to 0 once gallery is filled.
+       ========================================================= */
+    (function () {
+      var carData = {
+
+        'e41': {
+          name: 'E 41',
+          year: '2027',
+          heroImg: '',  /* Add hero car image path here */
+          result: 'Current season — under development.',
+          stats: [
+            /* { label: 'Competition', value: 'TBD' } */
+          ],
+          gallery: [
+            /* -------- ADD E41 SEASON IMAGES BELOW --------
+             * { src: 'images/cars/e41-01.jpg', alt: 'E41 in the workshop' },
+             * --------------------------------------------- */
+          ],
+          placeholders: 4
+        },
+
+        'e37': {
+          name: 'E 37',
+          year: '2026',
+          heroImg: 'E37.jpeg',
+          result: 'Competition results and Achievements.',
+          stats: [
+            /* -------- ADD STATS BELOW --------
+             * { label: 'Overall Rank', value: '12th' },
+             * { label: 'Design Event', value: '8th' },
+             * ---------------------------------- */
+            { label: 'Overall Rank', value: '15th' },
+            { label: 'Design Event', value: '9th' },
+            { label: 'Sustainability Event', value: '8th' },
+            { label: 'Endurance', value: '13th' },
+            { label: 'Acceleration', value: '8th' },
+            { label: 'Suspension & Traction', value: '10th' },
+          ],
+          gallery: [
+            /* -------- ADD E37 SEASON IMAGES BELOW -------- */
+          ],
+          placeholders: 4
+        },
+
+        'e35': {
+          name: 'E 35',
+          year: '2025',
+          heroImg: 'E35.jpeg',
+          gallery: [
+            { src: 'e35comp1.jpeg' },
+            { src: 'e35comp2.jpeg' },
+            { src: 'e35team2.jpeg' },
+            { src: 'e35team1.jpeg' },
+          ],
+        },
+
+        'c25': {
+          name: 'C 25',
+          year: '2024',
+          heroImg: 'FB_C25(2).jpeg',
+          result: 'Competition results and Achievements.',
+          stats: [],
+          gallery: [
+            { src: 'c25comp1.jpeg' },
+            { src: 'c25comp6.jpeg' },
+            { src: 'c25comp5.jpeg' },
+            { src: 'c25comp4.jpeg' },
+          ],
+        },
+
+
+        'e44': {
+          name: 'E 44',
+          year: '2023',
+          heroImg: 'BAJA_E44.jpeg',
+          result: 'Competition results and Achievements.',
+          stats: [],
+          gallery: [
+            { src: 'e44comp1.jpeg' },
+            { src: 'e44comp2.jpeg' },
+            { src: 'e44comp3.jpeg' },
+            { src: 'e44comp4.jpeg' },
+          ],
+        },
+
+        'c32': {
+          name: 'C 32',
+          year: '2023',
+          heroImg: 'FB_C32(2).jpeg',
+          result: 'Competition results and Achievements.',
+          stats: [
+            { label: 'Acceleration', value: '1st' },
+            { label: 'Skidpad', value: '1st' },
+            { label: 'Overall Rank', value: '2nd' },
+            { label: 'Engineering Design', value: '2nd' },
+            { label: 'Autocross', value: '2nd' },
+          ],
+          gallery: [
+            { src: 'c32comp1.jpeg' },
+            { src: 'c32comp2.jpeg' },
+            { src: 'c32comp3.jpeg' },
+            { src: 'c32comp4.jpeg' },
+          ],
+        },
+
+        'a04': {
+          name: 'A 04',
+          year: '2021',
+          heroImg: 'ESVC_A04.jpeg',
+          result: 'Competition results and Achievements.',
+          stats: [
+            { label: 'Overall Rank', value: '1st' },
+            { label: 'Acceleration', value: '1st' },
+            { label: 'Hill Climb', value: '1st' },
+            { label: 'Off Road', value: '1st' },
+            { label: 'Autonomous', value: '1st' },
+            { label: 'Endurance', value: '1st' },
+            { label: 'B-Plan & Cost', value: '1st' },
+            { label: 'Design', value: '3rd' },
+            { label: 'Innovation', value: '6th' },
+          ],
+          gallery: [
+            { src: 'a04comp1.jpg' },
+            { src: 'a04comp2.jpg' },
+            { src: 'a04comp3.jpg' },
+            { src: 'a04comp4.jpg' },
+          ],
+        }
+      };
+      var carOverlay = document.getElementById('carOverlay');
+      var carHero = document.getElementById('carOverlayHero');
+      var carGallery = document.getElementById('carOverlayGallery');
+      var carTitle = document.getElementById('carOverlayTitle');
+      var carCloseBtn = document.getElementById('carOverlayClose');
+
+      // Reuse the existing lightbox for gallery images
+      var lightbox = document.getElementById('lightbox');
+      var lbImg = document.getElementById('lightboxImg');
+      var lbCounter = document.getElementById('lightboxCounter');
+      var currentCarImages = [];
+      var currentCarIdx = 0;
+
+      function openCarOverlay(carId) {
+        var data = carData[carId];
+        if (!data) return;
+
+        carTitle.innerHTML = '<span>' + data.year + '</span> Season — ' + data.name;
+
+        // Build hero section
+        var heroImgHTML;
+        if (data.heroImg) {
+          heroImgHTML = '<div class="car-overlay__hero-img"><img src="' + data.heroImg + '" alt="' + data.name + '" loading="lazy"></div>';
+        } else {
+          heroImgHTML = '<div class="car-overlay__hero-img"><div class="car-overlay__hero-img-placeholder">Add car photo</div></div>';
+        }
+
+        var statsHTML = '';
+        if (data.stats && data.stats.length) {
+          statsHTML = '<div class="car-overlay__stats">';
+          data.stats.forEach(function (s) {
+            statsHTML += '<div class="car-overlay__stat"><strong>' + s.value + '</strong><small>' + s.label + '</small></div>';
+          });
+          statsHTML += '</div>';
+        }
+
+        carHero.innerHTML = heroImgHTML +
+          '<div class="car-overlay__info">' +
+          '<div class="car-overlay__car-name"><span>' + data.year + ' Season</span>' + data.name + '</div>' +
+          '<p class="car-overlay__result">' + data.result + '</p>' +
+          statsHTML +
+          '</div>';
+
+        // Build gallery
+        carGallery.innerHTML = '';
+        currentCarImages = data.gallery || [];
+
+        currentCarImages.forEach(function (img, i) {
+          var item = document.createElement('div');
+          item.className = 'car-overlay__gallery-item';
+          item.innerHTML = '<img src="' + img.src + '" alt="' + (img.alt || '') + '" loading="lazy">';
+          item.addEventListener('click', function () { openCarLightbox(i); });
+          carGallery.appendChild(item);
+        });
+
+        // Placeholders
+        var phCount = data.placeholders || 0;
+        for (var p = 0; p < phCount; p++) {
+          var ph = document.createElement('div');
+          ph.className = 'car-overlay__gallery-placeholder';
+          ph.innerHTML = '<svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zM8.5 13.5l2.5 3L14.5 12l4.5 6H5l3.5-4.5z"/></svg><span>Add image</span>';
+          carGallery.appendChild(ph);
+        }
+
+        carOverlay.classList.add('is-open');
+        carOverlay.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeCarOverlay() {
+        carOverlay.classList.remove('is-open');
+        carOverlay.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      function openCarLightbox(idx) {
+        if (!currentCarImages.length) return;
+        currentCarIdx = idx;
+        lbImg.src = currentCarImages[idx].src;
+        lbImg.alt = currentCarImages[idx].alt || '';
+        lbCounter.textContent = (idx + 1) + ' / ' + currentCarImages.length;
+        lightbox.classList.add('is-open');
+        lightbox.setAttribute('aria-hidden', 'false');
+      }
+
+      // Click listeners on car rows
+      document.querySelectorAll('.car-row[data-car]').forEach(function (row) {
+        row.addEventListener('click', function () {
+          openCarOverlay(row.dataset.car);
+        });
+      });
+
+      // Close button
+      carCloseBtn.addEventListener('click', closeCarOverlay);
+
+      // Click outside to close
+      carOverlay.addEventListener('click', function (e) {
+        if (e.target === carOverlay) closeCarOverlay();
+      });
+
+      // Escape key
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && carOverlay.classList.contains('is-open')) {
+          closeCarOverlay();
+        }
+      });
+    })();
+  </script>
+</body>
+
+</html>
